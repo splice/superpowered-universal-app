@@ -55,7 +55,14 @@ struct ContentView: View {
                                                                          audioEngine.setRollEnabled(2, channel: 0)
                                     channel0Roll = 2
                                 }
-                            }).buttonStyle(.bordered).tint(self.channel0Roll == 2 ? .blue : nil).font(.caption)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(self.channel0Roll == 2 ? Color.blue : Color.white ) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption).foregroundColor(self.channel0Roll == 2 ? Color.white : Color.blue)
                             Button("1", action: {
                                 if channel0Roll == 1 {
                                                                          audioEngine.setRollDisabledForChannel(0)
@@ -64,7 +71,14 @@ struct ContentView: View {
                                                                          audioEngine.setRollEnabled(1, channel: 0)
                                     channel0Roll = 1
                                 }
-                            }).buttonStyle(.bordered).tint(self.channel0Roll == 1 ? .blue : nil).font(.caption)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(self.channel0Roll == 1 ? Color.blue : Color.white ) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption).foregroundColor(self.channel0Roll == 1 ? Color.white : Color.blue)
                             Button("1/2", action: {
                                 if channel0Roll == 1/2 {
                                                                          audioEngine.setRollDisabledForChannel(0)
@@ -73,7 +87,14 @@ struct ContentView: View {
                                                                          audioEngine.setRollEnabled(1/2, channel: 0)
                                     channel0Roll = 1/2
                                 }
-                            }).buttonStyle(.bordered).tint(self.channel0Roll == 1/2 ? .blue : nil).font(.caption)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(self.channel0Roll == 1/2 ? Color.blue : Color.white ) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption).foregroundColor(self.channel0Roll == 1/2 ? Color.white : Color.blue)
                             Button("1/4", action: {
                                 if channel0Roll == 1/4 {
                                                                          audioEngine.setRollDisabledForChannel(0)
@@ -82,7 +103,14 @@ struct ContentView: View {
                                                                          audioEngine.setRollEnabled(1/4, channel: 0)
                                     channel0Roll = 1/4
                                 }
-                            }).buttonStyle(.bordered).tint(self.channel0Roll == 1/4 ? .blue : nil).font(.caption)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(self.channel0Roll == 1/4 ? Color.blue : Color.white ) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption).foregroundColor(self.channel0Roll == 1/4 ? Color.white : Color.blue)
                         }
                         VStack {
                             Text("HP").font(.caption)
@@ -127,13 +155,27 @@ struct ContentView: View {
                                                                      let newPitchShift = audioEngine.pitchShift(forChannel: 0) - 1
                                                                      audioEngine.setPitchShift(newPitchShift, channel: 0)
                                                                      channel0PitchShift = Int(newPitchShift)
-                                }).buttonStyle(.bordered).font(.caption2)
+                                }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 15)
+                                            
+                                            .stroke(Color.blue, lineWidth: 1))
+                                        .background(Color.white) // If you have this
+                                        .cornerRadius(15)
+                                        .font(.caption2).foregroundColor(Color.blue)
                                 Text("\(channel0PitchShift)").font(.caption2)
                                 Button("+1", action: {
                                                                      let newPitchShift = audioEngine.pitchShift(forChannel: 0) + 1
                                                                      audioEngine.setPitchShift(newPitchShift, channel: 0)
                                                                      channel0PitchShift = Int(newPitchShift)
-                                }).buttonStyle(.bordered).font(.caption2)
+                                }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 15)
+                                            
+                                            .stroke(Color.blue, lineWidth: 1))
+                                        .background(Color.white) // If you have this
+                                        .cornerRadius(15)
+                                        .font(.caption2).foregroundColor(Color.blue)
                             }
                         }
                     }
@@ -189,7 +231,14 @@ struct ContentView: View {
                                                                          audioEngine.setRollEnabled(2, channel: 1)
                                     channel1Roll = 2
                                 }
-                            }).buttonStyle(.bordered).tint(self.channel1Roll == 2 ? .blue : nil).font(.caption)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(self.channel1Roll == 2 ? Color.blue : Color.white ) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption).foregroundColor(self.channel1Roll == 2 ? Color.white : Color.blue)
                             
                             Button("1", action: {
                                 if channel1Roll == 1 {
@@ -199,7 +248,14 @@ struct ContentView: View {
                                                                          audioEngine.setRollEnabled(1, channel: 1)
                                     channel1Roll = 1
                                 }
-                            }).buttonStyle(.bordered).tint(self.channel1Roll == 1 ? .blue : nil).font(.caption)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(self.channel1Roll == 1 ? Color.blue : Color.white ) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption).foregroundColor(self.channel1Roll == 1 ? Color.white : Color.blue)
                             
                             Button("1/2", action: {
                                 if channel1Roll == 1/2 {
@@ -209,7 +265,14 @@ struct ContentView: View {
                                                                          audioEngine.setRollEnabled(1/2, channel: 1)
                                     channel1Roll = 1/2
                                 }
-                            }).buttonStyle(.bordered).tint(self.channel1Roll == 1/2 ? .blue : nil).font(.caption)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(self.channel1Roll == 1/2 ? Color.blue : Color.white ) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption).foregroundColor(self.channel1Roll == 1/2 ? Color.white : Color.blue)
                             
                             
                             Button("1/4", action: {
@@ -220,7 +283,14 @@ struct ContentView: View {
                                                                          audioEngine.setRollEnabled(1/4, channel: 1)
                                     channel1Roll = 1/4
                                 }
-                            }).buttonStyle(.bordered).tint(self.channel1Roll == 1/4 ? .blue : nil).font(.caption)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(self.channel1Roll == 1/4 ? Color.blue : Color.white ) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption).foregroundColor(self.channel1Roll == 1/4 ? Color.white : Color.blue)
                 
                         }
                         VStack {
@@ -244,13 +314,27 @@ struct ContentView: View {
                                                                  let newPitchShift = audioEngine.pitchShift(forChannel: 1) - 1
                                                                  audioEngine.setPitchShift(newPitchShift, channel: 1)
                                                                  channel1PitchShift = Int(newPitchShift)
-                            }).buttonStyle(.bordered).font(.caption2)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(Color.white) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption2).foregroundColor(Color.blue)
                             Text("\(channel1PitchShift)").font(.caption2)
                             Button("+1", action: {
                                                                  let newPitchShift = audioEngine.pitchShift(forChannel: 1) + 1
                                                                  audioEngine.setPitchShift(newPitchShift, channel: 1)
                                                                  channel1PitchShift = Int(newPitchShift)
-                            }).buttonStyle(.bordered).font(.caption2)
+                            }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        
+                                        .stroke(Color.blue, lineWidth: 1))
+                                    .background(Color.white) // If you have this
+                                    .cornerRadius(15)
+                                    .font(.caption2).foregroundColor(Color.blue)
                         }
                     }
                 }.padding(10).background(
@@ -274,13 +358,17 @@ struct ContentView: View {
                 ).cornerRadius(15)
                 VStack {
                     Text("Crossfader").font(.caption)
-                    Slider(value: $crossFaderPosition)
-//                        .onChange(of: self.crossFaderPosition) { newValue in
-//                                                         audioEngine.setCrossFaderPosition(newValue)
-//                        }
+                    Slider(value: $crossFaderPosition, in: 0...1, step:0.001)
+                        .onChange(of: self.crossFaderPosition) { newValue in
+                                                         audioEngine.setCrossFaderPosition(newValue)
+                        }
                     Button("Start / Stop", action: {
                                                  audioEngine.togglePlay()
-                    }).buttonStyle(.bordered)
+                    }).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)).overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color.blue, lineWidth: 1)).padding(5)
+                        .background(Color.white) // If you have this
+                        .cornerRadius(15)
                 }.padding(5).background(
                     Color.white
                 ).cornerRadius(15)
