@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+def superpowered_sdk_path = new File(projectDir, '../../superpowered')
+
+android { // main settings for your application
+    compileSdkVersion = 29
+
+    defaultConfig {
+        applicationId "com.superpowered.boilerplate"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        ndk { // these platforms cover 99% percent of all Android devices
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_PLATFORM=android-19', '-DANDROID_TOOLCHAIN=clang', '-DANDROID_ARM_NEON=TRUE', '-DANDROID_STL=c++_static', "-DPATH_TO_SUPERPOWERED:STRING=${superpowered_sdk_path}"
+                cFlags '-O3', '-fsigned-char' // full optimization, char data type is signed
+                cppFlags '-fsigned-char', "-I${superpowered_sdk_path}"
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
+}
+
+dependencies {
+    implementation 'rongi.rotate-layout:rotate-layout:3.0.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+}

@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		983D9970274CFFCA00B358F1 /* libSuperpoweredAudioIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D996F274CFFBF00B358F1 /* libSuperpoweredAudioIOS.a */; };
+		983D9976274D01AF00B358F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D9975274D01AF00B358F1 /* AVFoundation.framework */; };
+		983D9978274D01BC00B358F1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D9977274D01BC00B358F1 /* CoreMedia.framework */; };
+		983D997A274D01C200B358F1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D9979274D01C200B358F1 /* AudioToolbox.framework */; };
+		983D9982274D109F00B358F1 /* AudioEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 983D9981274D109F00B358F1 /* AudioEngine.mm */; };
+		983D9985274D183600B358F1 /* nuyorica.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 983D9983274D183600B358F1 /* nuyorica.m4a */; };
+		983D9987274D183600B358F1 /* lycka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 983D9984274D183600B358F1 /* lycka.mp3 */; };
+		983D9992274D5FF900B358F1 /* AudioEngineIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 983D9991274D5FF900B358F1 /* AudioEngineIOS.mm */; };
+		9891D47C2756635600881340 /* MixerEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9891D4792756635600881340 /* MixerEngine.cpp */; };
+		9891D47D2756635600881340 /* MixerChannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9891D47B2756635600881340 /* MixerChannel.cpp */; };
+		9891D4802756639A00881340 /* SuperpoweredIOSAudioIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9891D47E2756639900881340 /* SuperpoweredIOSAudioIO.mm */; };
+		98F4C43E274BB3E8009C7D0F /* SuperpoweredUniversalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C42E274BB3E6009C7D0F /* SuperpoweredUniversalAppApp.swift */; };
+		98F4C440274BB3E8009C7D0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C42F274BB3E6009C7D0F /* ContentView.swift */; };
+		98F4C442274BB3E8009C7D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F4C430274BB3E8009C7D0F /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		983D996F274CFFBF00B358F1 /* libSuperpoweredAudioIOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSuperpoweredAudioIOS.a; path = "../../../superpowered-ios-boilerplate/libs/superpowered/libSuperpoweredAudioIOS.a"; sourceTree = "<group>"; };
+		983D9971274D006600B358F1 /* SuperpoweredUniversalApp (iOS)-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperpoweredUniversalApp (iOS)-Bridging-Header.h"; sourceTree = "<group>"; };
+		983D9975274D01AF00B358F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		983D9977274D01BC00B358F1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		983D9979274D01C200B358F1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		983D997B274D01C900B358F1 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/AudioUnit.framework; sourceTree = DEVELOPER_DIR; };
+		983D9980274D109F00B358F1 /* AudioEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioEngine.h; sourceTree = "<group>"; };
+		983D9981274D109F00B358F1 /* AudioEngine.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioEngine.mm; sourceTree = "<group>"; };
+		983D9983274D183600B358F1 /* nuyorica.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = nuyorica.m4a; sourceTree = "<group>"; };
+		983D9984274D183600B358F1 /* lycka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lycka.mp3; sourceTree = "<group>"; };
+		983D9990274D5FF900B358F1 /* AudioEngineIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioEngineIOS.h; sourceTree = "<group>"; };
+		983D9991274D5FF900B358F1 /* AudioEngineIOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioEngineIOS.mm; sourceTree = "<group>"; };
+		983D999A274D639800B358F1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		983D999C274D639F00B358F1 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		983D999E274D63A500B358F1 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		983D99A0274D648A00B358F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		983D99A2274D64AB00B358F1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		9891D4782756635600881340 /* MixerChannel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MixerChannel.hpp; sourceTree = "<group>"; };
+		9891D4792756635600881340 /* MixerEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MixerEngine.cpp; sourceTree = "<group>"; };
+		9891D47A2756635600881340 /* MixerEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MixerEngine.hpp; sourceTree = "<group>"; };
+		9891D47B2756635600881340 /* MixerChannel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MixerChannel.cpp; sourceTree = "<group>"; };
+		9891D47E2756639900881340 /* SuperpoweredIOSAudioIO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SuperpoweredIOSAudioIO.mm; path = ../../superpowered/OpenSource/SuperpoweredIOSAudioIO.mm; sourceTree = "<group>"; };
+		9891D47F2756639900881340 /* SuperpoweredIOSAudioIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperpoweredIOSAudioIO.h; path = ../../superpowered/OpenSource/SuperpoweredIOSAudioIO.h; sourceTree = "<group>"; };
+		98F4C42E274BB3E6009C7D0F /* SuperpoweredUniversalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperpoweredUniversalAppApp.swift; sourceTree = "<group>"; };
+		98F4C42F274BB3E6009C7D0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		98F4C430274BB3E8009C7D0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98F4C435274BB3E8009C7D0F /* SuperpoweredUniversalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperpoweredUniversalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98F4C432274BB3E8009C7D0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				983D9978274D01BC00B358F1 /* CoreMedia.framework in Frameworks */,
+				983D9976274D01AF00B358F1 /* AVFoundation.framework in Frameworks */,
+				983D9970274CFFCA00B358F1 /* libSuperpoweredAudioIOS.a in Frameworks */,
+				983D997A274D01C200B358F1 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		983D996E274CFFBF00B358F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				983D99A2274D64AB00B358F1 /* CoreMedia.framework */,
+				983D99A0274D648A00B358F1 /* AVFoundation.framework */,
+				983D999E274D63A500B358F1 /* CoreAudio.framework */,
+				983D999C274D639F00B358F1 /* AudioUnit.framework */,
+				983D999A274D639800B358F1 /* AudioToolbox.framework */,
+				983D997B274D01C900B358F1 /* AudioUnit.framework */,
+				983D9979274D01C200B358F1 /* AudioToolbox.framework */,
+				983D9977274D01BC00B358F1 /* CoreMedia.framework */,
+				983D9975274D01AF00B358F1 /* AVFoundation.framework */,
+				983D996F274CFFBF00B358F1 /* libSuperpoweredAudioIOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		983D9993274D601200B358F1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9891D47F2756639900881340 /* SuperpoweredIOSAudioIO.h */,
+				9891D47E2756639900881340 /* SuperpoweredIOSAudioIO.mm */,
+				983D9990274D5FF900B358F1 /* AudioEngineIOS.h */,
+				983D9991274D5FF900B358F1 /* AudioEngineIOS.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		9891D4772756635600881340 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				9891D4782756635600881340 /* MixerChannel.hpp */,
+				9891D4792756635600881340 /* MixerEngine.cpp */,
+				9891D47A2756635600881340 /* MixerEngine.hpp */,
+				9891D47B2756635600881340 /* MixerChannel.cpp */,
+			);
+			name = cpp;
+			path = ../../cpp;
+			sourceTree = "<group>";
+		};
+		98F4C428274BB3E6009C7D0F = {
+			isa = PBXGroup;
+			children = (
+				98F4C42D274BB3E6009C7D0F /* Shared */,
+				983D9993274D601200B358F1 /* iOS */,
+				98F4C436274BB3E8009C7D0F /* Products */,
+				983D996E274CFFBF00B358F1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		98F4C42D274BB3E6009C7D0F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				98F4C42E274BB3E6009C7D0F /* SuperpoweredUniversalAppApp.swift */,
+				98F4C42F274BB3E6009C7D0F /* ContentView.swift */,
+				98F4C430274BB3E8009C7D0F /* Assets.xcassets */,
+				983D9980274D109F00B358F1 /* AudioEngine.h */,
+				983D9981274D109F00B358F1 /* AudioEngine.mm */,
+				9891D4772756635600881340 /* cpp */,
+				983D9984274D183600B358F1 /* lycka.mp3 */,
+				983D9983274D183600B358F1 /* nuyorica.m4a */,
+				983D9971274D006600B358F1 /* SuperpoweredUniversalApp (iOS)-Bridging-Header.h */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		98F4C436274BB3E8009C7D0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98F4C435274BB3E8009C7D0F /* SuperpoweredUniversalApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98F4C434274BB3E8009C7D0F /* SuperpoweredUniversalApp (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98F4C446274BB3E8009C7D0F /* Build configuration list for PBXNativeTarget "SuperpoweredUniversalApp (iOS)" */;
+			buildPhases = (
+				98F4C431274BB3E8009C7D0F /* Sources */,
+				98F4C432274BB3E8009C7D0F /* Frameworks */,
+				98F4C433274BB3E8009C7D0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SuperpoweredUniversalApp (iOS)";
+			productName = "SuperpoweredUniversalApp (iOS)";
+			productReference = 98F4C435274BB3E8009C7D0F /* SuperpoweredUniversalApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F4C429274BB3E6009C7D0F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					98F4C434274BB3E8009C7D0F = {
+						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
+					};
+				};
+			};
+			buildConfigurationList = 98F4C42C274BB3E6009C7D0F /* Build configuration list for PBXProject "SuperpoweredUniversalApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 98F4C428274BB3E6009C7D0F;
+			productRefGroup = 98F4C436274BB3E8009C7D0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98F4C434274BB3E8009C7D0F /* SuperpoweredUniversalApp (iOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98F4C433274BB3E8009C7D0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				983D9985274D183600B358F1 /* nuyorica.m4a in Resources */,
+				983D9987274D183600B358F1 /* lycka.mp3 in Resources */,
+				98F4C442274BB3E8009C7D0F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98F4C431274BB3E8009C7D0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98F4C440274BB3E8009C7D0F /* ContentView.swift in Sources */,
+				98F4C43E274BB3E8009C7D0F /* SuperpoweredUniversalAppApp.swift in Sources */,
+				983D9992274D5FF900B358F1 /* AudioEngineIOS.mm in Sources */,
+				9891D4802756639A00881340 /* SuperpoweredIOSAudioIO.mm in Sources */,
+				9891D47C2756635600881340 /* MixerEngine.cpp in Sources */,
+				9891D47D2756635600881340 /* MixerChannel.cpp in Sources */,
+				983D9982274D109F00B358F1 /* AudioEngine.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		98F4C444274BB3E8009C7D0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../superpowered";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../superpowered";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		98F4C445274BB3E8009C7D0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../superpowered";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../superpowered";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		98F4C447274BB3E8009C7D0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NQ2VLM7NM7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.superpowered.SuperpoweredUniversalApp;
+				PRODUCT_NAME = SuperpoweredUniversalApp;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/SuperpoweredUniversalApp (iOS)-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98F4C448274BB3E8009C7D0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NQ2VLM7NM7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.superpowered.SuperpoweredUniversalApp;
+				PRODUCT_NAME = SuperpoweredUniversalApp;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/SuperpoweredUniversalApp (iOS)-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98F4C42C274BB3E6009C7D0F /* Build configuration list for PBXProject "SuperpoweredUniversalApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98F4C444274BB3E8009C7D0F /* Debug */,
+				98F4C445274BB3E8009C7D0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98F4C446274BB3E8009C7D0F /* Build configuration list for PBXNativeTarget "SuperpoweredUniversalApp (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98F4C447274BB3E8009C7D0F /* Debug */,
+				98F4C448274BB3E8009C7D0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F4C429274BB3E6009C7D0F /* Project object */;
+}

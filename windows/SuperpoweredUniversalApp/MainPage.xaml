@@ -1,0 +1,104 @@
+﻿<Page
+    x:Class="SuperpoweredUniversalApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SuperpoweredUniversalApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="800" d:DesignWidth="477.5">
+
+
+    <Grid RenderTransformOrigin="0,0" Height="800" VerticalAlignment="Center" HorizontalAlignment="Center" Width="482">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="627*"/>
+
+        </Grid.ColumnDefinitions>
+
+
+        <Image HorizontalAlignment="Left" Height="800" VerticalAlignment="Center" Width="480" Source="/Assets/wave.png" Stretch="UniformToFill"/>
+        <Rectangle HorizontalAlignment="Center" Height="122" Margin="0,657,0,0" VerticalAlignment="Top" Width="281" Fill="White" RadiusX="15" RadiusY="15" Stroke="#FF0078D4"/>
+        <Rectangle HorizontalAlignment="Left" Height="523" Margin="257,51,0,0" VerticalAlignment="Top" Width="125" Fill="White" RadiusX="15" RadiusY="15" Stroke="#FF0078D4"/>
+        <Rectangle HorizontalAlignment="Left" Height="65" Margin="99,583,0,0" VerticalAlignment="Top" Width="281" Fill="White" RadiusX="15" RadiusY="15" Stroke="#FF0078D4"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="523" Margin="99,51,0,0" VerticalAlignment="Top" Width="125" Fill="White" RadiusX="15" RadiusY="15" Stroke="#FF0078D4"/>
+        <ProgressBar x:Name="GainChannel0" HorizontalAlignment="Left" Height="8" Margin="11,296,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="1" Value="0.3" CornerRadius="5,5,5,5">
+            <ProgressBar.RenderTransform>
+                <CompositeTransform Rotation="-90" ScaleY="-1"/>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Slider HorizontalAlignment="Left" Margin="102,283,0,0" VerticalAlignment="Top" Width="400" Height="32" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Value="0.8" Maximum="1" TickFrequency="0.01" TickPlacement="Outside" StepFrequency="0.001" Background="#660078D4" ValueChanged="GainChannel1_ValueChanged">
+            <Slider.RenderTransform>
+                <CompositeTransform Rotation="-90"/>
+            </Slider.RenderTransform>
+        </Slider>
+        <Slider HorizontalAlignment="Center" Margin="0,691,0,0" VerticalAlignment="Top" Width="255" Value="0.5" Maximum="1" RequestedTheme="Default" LargeChange="0.2" SmallChange="0.01" StepFrequency="0.01" TickPlacement="Outside" TickFrequency="0.01" Background="#660078D4" ValueChanged="Crossfader_ValueChanged"/>
+        <Slider HorizontalAlignment="Left" Margin="29,378,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="1" Value="0.5" StepFrequency="0.001" TickFrequency="0.01" TickPlacement="Outside" Background="#660078D4" ValueChanged="FilterChannel0_ValueChanged">
+            <Slider.RenderTransform>
+                <CompositeTransform Rotation="-90"/>
+            </Slider.RenderTransform>
+        </Slider>
+        <Slider HorizontalAlignment="Left" Margin="-30,281,0,0" VerticalAlignment="Top" Width="400" Height="32" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="1" Value="0.8" StepFrequency="0.001" TickFrequency="0.01" TickPlacement="Outside" RequestedTheme="Default" Background="#660078D4" ValueChanged="GainChannel0_ValueChanged">
+            <Slider.RenderTransform>
+                <CompositeTransform Rotation="-90"/>
+            </Slider.RenderTransform>
+        </Slider>
+        <Slider HorizontalAlignment="Left" Margin="251,380,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="1" Value="0.5" TickPlacement="Outside" TickFrequency="0.01" StepFrequency="0.001" Background="#660078D4" ValueChanged="FilterChannel1_ValueChanged">
+            <Slider.RenderTransform>
+                <CompositeTransform Rotation="-90"/>
+            </Slider.RenderTransform>
+        </Slider>
+        <Slider x:Name="TempoSlider" HorizontalAlignment="Center" Margin="0,601,0,0" VerticalAlignment="Top" Width="247" RenderTransformOrigin="0.5,0.5" Minimum="80" Maximum="150" Value="126" TickFrequency="10" TickPlacement="Outside" Background="#660078D4" ValueChanged="Tempo_ValueChanged">
+            <Slider.RenderTransform>
+                <CompositeTransform Rotation="0"/>
+            </Slider.RenderTransform>
+        </Slider>
+        <TextBlock HorizontalAlignment="Left" Margin="118,116,0,0" Text="ROLL" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="-261,257,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="123,274,0,0" Text="HP" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="10" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="123,496,0,0" Text="LP" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="149,545,0,0" Text="PITCH" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="10" RenderTransformOrigin="0.562,0.462" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,666,0,0" Text="CROSSFADER" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="0.562,0.462" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="222,590,0,0" Text="TEMPO" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="0.562,0.462" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,715,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="0.5,0.5"><Run Text="A"/><LineBreak/><Run/></TextBlock>
+        <Button Click="PitchLowerChannel0_Click" Content="-1" Margin="117,514,0,0" VerticalAlignment="Top" Width="32" Height="27" FontSize="10"  CornerRadius="5,0,0,5" BorderBrush="#660078D4" Background="White" Foreground="#FF0078D4" BorderThickness="1,1,1,1"/>
+        <Button Click="PitchRaiseChannel0_Click" Content="+1" Margin="181,514,0,0" VerticalAlignment="Top" Width="32" Height="27" FontSize="10"  CornerRadius="0,5,5,0" BorderBrush="#660078D4" Background="White" Foreground="#FF0078D4" BorderThickness="1,1,1,1"/>
+        <Button x:Name="Roll1Channel1" Click="Roll1Channel1_Click" Content="2" Margin="334,135,0,0" VerticalAlignment="Top" Width="35" Height="26" FontSize="10" CornerRadius="5,5,0,0" BorderBrush="#660078D4" BorderThickness="1,1,1,1" Background="White" Foreground="#FF0078D4" FontWeight="Normal"/>
+        <Button x:Name="Roll2Channel1" Click="Roll2Channel1_Click" Content="1" Margin="334,160,0,0" VerticalAlignment="Top" Width="35" Height="26" FontSize="10" RenderTransformOrigin="5.8,0.846" BorderBrush="#660078D4" BorderThickness="1,1,1,1" Background="White" Foreground="#FF0078D4" FontWeight="Normal"/>
+        <Button x:Name="Roll3Channel1" Click="Roll3Channel1_Click" Content="1/2" Margin="334,185,0,0" VerticalAlignment="Top" Width="35" Height="26" FontSize="10" BorderBrush="#660078D4" BorderThickness="1,1,1,1" Background="White" Foreground="#FF0078D4" FontWeight="Normal"/>
+        <Button x:Name="Roll4Channel1" Click="Roll4Channel1_Click" Content="1/4" Margin="334,211,0,0" VerticalAlignment="Top" Width="35" Height="26" FontSize="10" CornerRadius="0,0,5,5" BorderBrush="#660078D4" BorderThickness="1,1,1,1" Background="White" Foreground="#FF0078D4" FontWeight="Normal"/>
+        <TextBlock HorizontalAlignment="Left" Margin="345,275,0,0" Text="HP" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="10" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="347,499,0,0" Text="LP" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="306,545,0,0" Text="PITCH" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="10" RenderTransformOrigin="0.562,0.462" FontWeight="Bold"/>
+        <ProgressBar x:Name="GainChannel1" HorizontalAlignment="Left" Height="8" Margin="75,296,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="1" Value="0.3" CornerRadius="5,5,5,5">
+            <ProgressBar.RenderTransform>
+                <CompositeTransform Rotation="-90" ScaleY="-1"/>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Rectangle HorizontalAlignment="Left" Height="28" Margin="269,59,0,0" VerticalAlignment="Top" Width="103" Fill="White" RadiusX="5" RadiusY="5" FocusVisualPrimaryBrush="White"/>
+        <Rectangle HorizontalAlignment="Left" Height="28" Margin="109,59,0,0" VerticalAlignment="Top" Width="103" Fill="White" RadiusX="5" RadiusY="5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="157,63,0,0" Text="A" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="14" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="318,63,0,0" Text="B" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="14" FontWeight="Bold"/>
+        <ProgressBar x:Name="GainMaster" HorizontalAlignment="Center" Height="22" Margin="0,290,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Maximum="1" Value="0.7" CornerRadius="5,5,5,5">
+            <ProgressBar.RenderTransform>
+                <CompositeTransform Rotation="-90" ScaleY="-1"/>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Image HorizontalAlignment="Center" Height="27" Margin="0,18,0,0" VerticalAlignment="Top" Width="165" Source="/Assets/superpowered-black.png"/>
+        <TextBlock Margin="360,716,116,0" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="10" RenderTransformOrigin="0.5,0.5" Text="B&#xA;"/>
+        <Button x:Name="Roll1Channel0" Click="Roll1Channel0_Click" Content="2" Margin="112,135,0,0" VerticalAlignment="Top" Width="35" Height="26" FontSize="10" CornerRadius="5,5,0,0" BorderBrush="#660078D4" BorderThickness="1,1,1,1" Background="White" Foreground="#FF0078D4" FontWeight="Normal" FocusVisualPrimaryBrush="{x:Null}"/>
+        <Button x:Name="Roll2Channel0" Click="Roll2Channel0_Click" Content="1" Margin="112,161,0,0" VerticalAlignment="Top" Width="35" Height="26" FontSize="10" RenderTransformOrigin="5.8,0.846" BorderBrush="#660078D4" BorderThickness="1,1,1,1" Background="White" Foreground="#FF0078D4" FontWeight="Normal" FocusVisualPrimaryBrush="{x:Null}"/>
+        <Button x:Name="Roll3Channel0" Click="Roll3Channel0_Click" Content="1/2" Margin="112,187,0,0" VerticalAlignment="Top" Width="35" Height="26" FontSize="10" BorderBrush="#660078D4" BorderThickness="1,1,1,1" Background="White" Foreground="#FF0078D4" FontWeight="Normal" FocusVisualPrimaryBrush="{x:Null}"/>
+        <Button x:Name="Roll4Channel0" Click="Roll4Channel0_Click" Content="1/4" Margin="112,213,0,0" VerticalAlignment="Top" Width="35" Height="26" FontSize="10" CornerRadius="0,0,5,5" BorderBrush="#660078D4" BorderThickness="1,1,1,1" Background="White" Foreground="#FF0078D4" FontWeight="Normal" FocusVisualPrimaryBrush="{x:Null}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="341,115,0,0" Text="ROLL" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" FontWeight="Bold"/>
+        <Button x:Name="PitchChannel0" Content="0" Margin="149,514,0,0" VerticalAlignment="Top" Width="32" Height="27" FontSize="10"  BorderBrush="#660078D4" Background="White" Foreground="#FF0078D4" BorderThickness="1,1,1,1"/>
+        <Button Click="PitchLowerChannel1_Click" Content="-1" Margin="269,514,0,0" VerticalAlignment="Top" Width="32" Height="27" FontSize="10"  CornerRadius="5,0,0,5" BorderBrush="#660078D4" Background="White" Foreground="#FF0078D4" BorderThickness="1,1,1,1"/>
+        <Button x:Name="PitchChannel1" Content="0" Margin="301,514,0,0" VerticalAlignment="Top" Width="32" Height="27" FontSize="10"  BorderBrush="#660078D4" Background="White" Foreground="#FF0078D4" BorderThickness="1,1,1,1"/>
+
+        <Button Click="PitchRaiseChannel1_Click" Content="+1" Margin="333,514,0,0" VerticalAlignment="Top" Width="32" Height="27" FontSize="10" CornerRadius="0,5,5,0" BorderBrush="#660078D4" Background="White" Foreground="#FF0078D4" BorderThickness="1,1,1,1"/>
+        <Button Content="Start / Stop" Margin="0,730,0,0" VerticalAlignment="Top" Click="Button_Click" Height="38" HorizontalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="117,625,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="0.5,0.5"><Run Text="80"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="354,625,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="10" RenderTransformOrigin="0.5,0.5" SelectionChanged="TextBlock_SelectionChanged"><Run Text="150"/><LineBreak/><Run/></TextBlock>
+
+    </Grid>
+</Page>
