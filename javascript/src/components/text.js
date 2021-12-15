@@ -34,7 +34,7 @@ const Text = ({}) => {
         <StyledPlatform src="/superpowered-universal-app/images/platforms/windows.svg" />
         <StyledPlatform src="/superpowered-universal-app/images/platforms/js.svg" />
     </Platforms>
-    <GithubLink href="https://github.com/switchboard-sdk/superpowered-universal-app/" target="_blank">LEARN MORE</GithubLink>
+    <GithubLink href="https://github.com/splice/superpowered-universal-app" target="_blank">LEARN MORE</GithubLink>
     </div>
 }
 

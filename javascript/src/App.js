@@ -15,7 +15,7 @@ const App = () => {
         <Text />
         <small>v{packageJson.version}</small>
       </main>
-      <GithubCorner href="https://github.com/splice/superpowered-universal-application" />
+      <GithubCorner href="https://github.com/splice/superpowered-universal-app" />
     </div>
   );
 };
