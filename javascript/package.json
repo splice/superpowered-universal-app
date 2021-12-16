@@ -1,7 +1,7 @@
 {
   "name": "superpowered-universal-app",
   "homepage": "/superpowered-universal-app/",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.6.0",
