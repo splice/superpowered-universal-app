@@ -33,7 +33,7 @@ Besides the use of Superpowered or even the fact its an audio applciation, this 
 
 Visit the repo's github page [here](https://splice.github.io/superpowered-universal-app/).
 
-Want to see it running on other platforms? Download this repository and get building! We decided not to included the compiled executables due to the complexities around code signing and installation. If you'd like to see the applicaion without setting up the various development environments, we've also included some handy videos of each platform running the application in the `/videos` folder.
+Want to see it running on other platforms? Download this repository and get building! We decided not to included the compiled executables due to the complexities around code signing and installation.
 
 ---
 
