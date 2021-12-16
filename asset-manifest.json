@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/superpowered-universal-app/static/css/main.bffa4249.chunk.css",
-    "main.js": "/superpowered-universal-app/static/js/main.00abff0c.chunk.js",
-    "main.js.map": "/superpowered-universal-app/static/js/main.00abff0c.chunk.js.map",
+    "main.js": "/superpowered-universal-app/static/js/main.933f342e.chunk.js",
+    "main.js.map": "/superpowered-universal-app/static/js/main.933f342e.chunk.js.map",
     "runtime-main.js": "/superpowered-universal-app/static/js/runtime-main.7760a09d.js",
     "runtime-main.js.map": "/superpowered-universal-app/static/js/runtime-main.7760a09d.js.map",
     "static/js/2.abd5b055.chunk.js": "/superpowered-universal-app/static/js/2.abd5b055.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7760a09d.js",
     "static/js/2.abd5b055.chunk.js",
     "static/css/main.bffa4249.chunk.css",
-    "static/js/main.00abff0c.chunk.js"
+    "static/js/main.933f342e.chunk.js"
   ]
 }
