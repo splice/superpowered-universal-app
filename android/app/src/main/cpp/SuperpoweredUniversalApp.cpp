@@ -38,9 +38,6 @@ SuperpoweredUniversalApp::SuperpoweredUniversalApp (
 			false  // enableNetworking (using Superpowered::httpRequest)
 	);
 
-	generator = new Superpowered::Generator(44100, Superpowered::Generator::Sine);
-	generator->frequency = 440;
-
 	MixerChannelAsset assetA = MixerChannelAsset();
 	assetA.filePath = path;
 	assetA.fileOffset = fileAOffset;
@@ -75,7 +72,6 @@ SuperpoweredUniversalApp::SuperpoweredUniversalApp (
 // Destructor. Free resources.
 SuperpoweredUniversalApp::~SuperpoweredUniversalApp() {
 	delete outputIO; // Always stop and delete audio I/O first.
-	delete generator;
 	delete mixer;
 }
 

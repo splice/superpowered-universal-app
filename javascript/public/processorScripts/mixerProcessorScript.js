@@ -133,7 +133,7 @@ class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
 
   processAudio(inputBuffer, outputBuffer, buffersize, parameters) {
     // Call the process block on the mixer engine;
-    this.mixerEngine.process(inputBuffer, outputBuffer, buffersize);
+    this.mixerEngine.process(inputBuffer, outputBuffer, buffersize, this.samplerate);
   }
 }
 
