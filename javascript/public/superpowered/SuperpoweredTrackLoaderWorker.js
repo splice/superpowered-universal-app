@@ -1,7 +1,6 @@
 importScripts('./SuperpoweredGlue.js');
 
 async function load(url) {
-    console.log(url)
     let Superpowered = await SuperpoweredGlue.fetch('./superpowered.wasm');
     SuperpoweredGlue.__uint_max__sp__ = 255;
     Superpowered.Initialize();
