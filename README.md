@@ -65,7 +65,7 @@ Below is a very top level overview of the application's code structure
 
 ```
 -------------------------    -------------------------          
-| MixerChannel class     |  |   MixerChannel class    |  (There are two channels in the mixer)
+| MixerChannel class     |  |   MixerChannel class    |  (There are two channels in this mixer example)
 -------------------------    ------------------------- 
                     |           |
                     |           |
@@ -76,19 +76,19 @@ Below is a very top level overview of the application's code structure
                         |       
                         |
                         |                    --------------------------
-                        |                    |           UI           | ()
+                        |                    |           UI           | (Native UI for OSs, React for Web)
                         |                    |  (Platform dependent)  | 
                         |                    --------------------------
                         |                       |
                         |                       |
                         |                       |
                     --------------------------------
-                    | Application controller       |   (Writen in varios languages)
+                    | Application controller       |   (Writen in various languages)
                     --------------------------------
                                 |
                                 |
             --------------------------------------------
-            | Superpowered open-source audio schuduler |   (Make sure we ge a regular audio processing callback with a comon interface)
+            | Superpowered open-source audio scheduler |   (Make sure we gte a regular audio processing callback with a common interface)
             --------------------------------------------
                                 |
                                 |
