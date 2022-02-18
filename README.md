@@ -70,7 +70,7 @@ Below is a very top level overview of the application's code structure
                     |           |
                     |           |
             -------------------------         
-            |   MixerEngine class   |  (Coordinates the mixer channels)
+            |   MixerEngine class   |  (Co-ordinates the mixer channels)
             -------------------------                               
                         |
                         |       
@@ -83,12 +83,12 @@ Below is a very top level overview of the application's code structure
                         |                       |
                         |                       |
                     --------------------------------
-                    | Application controller       |   (Writen in various languages)
+                    | Application controller       |   (Written in various languages)
                     --------------------------------
                                 |
                                 |
             --------------------------------------------
-            | Superpowered open-source audio scheduler |   (Make sure we gte a regular audio processing callback with a common interface)
+            | Superpowered open-source audio scheduler |   (Provides an audio processing callback with a common interface)
             --------------------------------------------
                                 |
                                 |
