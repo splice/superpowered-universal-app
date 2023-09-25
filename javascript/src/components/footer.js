@@ -1,30 +1,6 @@
-import styled from 'styled-components';
+import { GithubLink, Platforms, StyledPlatform } from './styled';
 
-const StyledPlatform = styled.img`
-    height: 40px;
-    margin: 10px;
-    max-width: 50px;
-`;
-
-
-const Platforms = styled.div`
-    margin-bottom: 20px;
-`;
-
-const GithubLink = styled.a`
-    background: #1253FF;
-    padding: 10px 20px;
-    border-radius: 15px;
-    border: none;
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 10px;
-    font-weight: 500;
-`;
-
-const Text = ({}) => {
-   
+const Footer = () => {
     return <div>
     <h2>Available on all platforms</h2>
     <Platforms>
@@ -38,4 +14,4 @@ const Text = ({}) => {
     </div>
 }
 
-export default Text;
+export default Footer;

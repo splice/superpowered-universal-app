@@ -1,43 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  SuperpoweredGlue,
-  SuperpoweredWebAudio,
-} from "../lib/superpowered/SuperpoweredWebAudio.js";
-
-import styled from "styled-components";
+import AudioEngine from "../AudioEngine";
 import Channel from "./channel";
 import Crossfader from "../components/crossfader";
 import Slider from "../components/slider.js";
 import MainMeter from "../components/mainMeter.js";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-
-const MixerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 500px;
-  margin: 0 10px 20px 10px;
-  padding: 10px;
-  border: 1px solid #1253FF;
-  border-radius: 15px;
-  background: url(/superpowered-universal-app/images/wave.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  box-shadow: 10px 10px #e7e5e5;
-`;
-
-const ChannelBank = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-`;
-
-const Logo = styled.img`
-margin: 10px 0;
-`;
+import constants from '../constants';
+import { ChannelBank, Logo, MixerContainer } from "../components/styled";
 
 const aPeaks = {
   stereo: 0,
@@ -50,7 +20,6 @@ const masterPeaks = {
 };
 
 const Mixer = () => {
-  const webaudioManager = useRef();
   const processorNode = useRef();
   const [assetsLoaded, setAssetsLoaded] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -60,28 +29,16 @@ const Mixer = () => {
   }, []);
 
   const loadSP = async () => {
-    const superpowered = await SuperpoweredGlue.fetch(
-      "/superpowered-universal-app/superpowered/superpowered.wasm"
-    );
-    superpowered.Initialize({
-      licenseKey: "ExampleLicenseKey-WillExpire-OnNextUpdate",
-      enableAudioAnalysis: true,
-      enableFFTAndFrequencyDomain: true,
-      enableAudioTimeStretching: true,
-      enableAudioEffects: true,
-      enableAudioPlayerAndDecoder: true,
-      enableCryptographics: false,
-      enableNetworking: false,
-    });
-    webaudioManager.current = new SuperpoweredWebAudio(48000, superpowered);
+                
+    await AudioEngine.loadSuperpoweredLibrary(constants.SP_LICENSE_KEY, constants.ABSOLUTE_SP_LIBRARY_URL);
 
-    processorNode.current = await webaudioManager.current.createAudioNodeAsync(
-      "/superpowered-universal-app/processorScripts/mixerProcessorScript.js",
+    processorNode.current = await AudioEngine.webaudioManager.createAudioNodeAsync(
+      constants.ABSOLUTE_PROCESSOR_URL,
       "MixerProcessor",
       onMessageProcessorAudioScope
     );
     processorNode.current.connect(
-      webaudioManager.current.audioContext.destination
+      AudioEngine.webaudioManager.audioContext.destination
     );
     processorNode.current.onprocessorerror = (e) => {
       console.error(e);
@@ -103,7 +60,6 @@ const Mixer = () => {
   };
 
   const onMessageProcessorAudioScope = (message) => {
-    // console.log(message);
     if (message.type === "peakData") {
       masterPeaks.stereo = message.peaks.master;
       aPeaks.stereo = message.peaks.a;
@@ -148,13 +104,12 @@ const Mixer = () => {
   };
 
   const sendPlayCommand = () => {
-    
     setPlaying(!playing);
-    webaudioManager.current.audioContext.resume();
+    AudioEngine.resume();
     processorNode.current.sendMessageToAudioScope({
       type: "command",
       payload: {
-        id: playing? "stopPlayback" : "startPlayback",
+        id: playing ? "stopPlayback" : "startPlayback",
       },
     });
   };
@@ -170,7 +125,7 @@ const Mixer = () => {
   };
 
   return (
-    <MixerContainer>
+    <MixerContainer $backgroundUrl={constants.RELATIVE_BACKGROUND_URL}>
       <Logo src="/superpowered-universal-app/images/superpowered-black.svg" alt="Superpowered logo" />
       <ChannelBank>
         <Channel
@@ -268,10 +223,7 @@ const Mixer = () => {
         {!assetsLoaded ? "Loading.." : "Start/Stop"}
         </Button>
         </Box>
-        
       </Box>
-      
-      
     </MixerContainer>
   );
 };

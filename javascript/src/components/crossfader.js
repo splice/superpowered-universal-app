@@ -1,14 +1,8 @@
 import React from 'react'
-import styled from 'styled-components';
 import Slider from '../components/slider';
-
-const CrossfaderContainer = styled.div`
-    display: flex;
-    justify-content: center;
-`;
+import { CrossfaderContainer } from './styled';
 
 const Crossfader = ({onVolumeChange}) => {
-
     return <CrossfaderContainer>
         <Slider marks={[
             {
