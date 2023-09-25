@@ -128,8 +128,14 @@ class MixerChannel {
         this.roll.enabled = false;
     }
 
-    process(bufferSize) {
+    setSamplerate(samplerate) {
+        this.player.outputSamplerate = samplerate;
+        this.roll.samplerate = samplerate;
+        this.lowpassFilter.samplerate = samplerate;
+        this.hipassFilter.samplerate = samplerate;
+    }
 
+    process(bufferSize) {
         // Generate player buffers (or silence)
         if (!this.player.processStereo(this.channelOutputBuffer.pointer, false, bufferSize, 1)) {
             for (let n = 0; n < bufferSize; n++) this.channelOutputBuffer.array[n] = 0;

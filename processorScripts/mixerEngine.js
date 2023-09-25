@@ -74,8 +74,9 @@ class MixerEngine {
         this.channels[channel].setRollDisabled();
     }
 
-    process(inputBuffer, outputBuffer, bufferSize) {
+    process(inputBuffer, outputBuffer, bufferSize, samplerate) {
         for (let channel = 0; channel < this.channels.length; channel++) {
+            this.channels[channel].setSamplerate(samplerate);
             this.channels[channel].process(bufferSize);
         }
 

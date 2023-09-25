@@ -1,5 +1,5 @@
 // Import the SuperpoweredWebAudio helper to allow us to extend the SuperpoweredWebAudio.AudioWorkletProcessor class
-import { SuperpoweredWebAudio, SuperpoweredTrackLoader } from "../superpowered/SuperpoweredWebAudio.js";
+import "../lib/Superpowered.js";
 import MixerEngine from './mixerEngine.js';
 
 class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
@@ -19,7 +19,7 @@ class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
   }
 
   loadAssetFromProcessor(url) {
-    SuperpoweredTrackLoader.downloadAndDecode(
+    this.Superpowered.downloadAndDecode(
       url,
       this
     );
@@ -61,10 +61,6 @@ class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
         });
         
       }
-      if (message.payload?.id === "createMixer") {
-        this.mixerEngine = new MixerEngine(this.Superpowered, SuperpoweredTrackLoader, this.samplerate, 2);
-        this.started = false;
-      }
       if (message.payload?.id === "startPlayback") {
         this.channelA.configure(126, 353);
         this.channelB.configure(123, 40);
@@ -96,7 +92,6 @@ class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
     if (scope === 'global') this.applyGlobalParamChange(paramName, channelIndex, value);
     if (scope === 'channel') this.applyChannelParamChange(paramName, channelIndex, value);
   }
-
 
   applyChannelParamChange(paramName, channelIndex, value) {
       switch (paramName) {
@@ -133,7 +128,7 @@ class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
 
   processAudio(inputBuffer, outputBuffer, buffersize, parameters) {
     // Call the process block on the mixer engine;
-    this.mixerEngine.process(inputBuffer, outputBuffer, buffersize);
+    this.mixerEngine.process(inputBuffer, outputBuffer, buffersize, this.samplerate);
   }
 }
 

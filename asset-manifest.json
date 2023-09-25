@@ -1,22 +1,13 @@
 {
   "files": {
-    "main.css": "/superpowered-universal-app/static/css/main.bffa4249.chunk.css",
-    "main.js": "/superpowered-universal-app/static/js/main.933f342e.chunk.js",
-    "main.js.map": "/superpowered-universal-app/static/js/main.933f342e.chunk.js.map",
-    "runtime-main.js": "/superpowered-universal-app/static/js/runtime-main.7760a09d.js",
-    "runtime-main.js.map": "/superpowered-universal-app/static/js/runtime-main.7760a09d.js.map",
-    "static/js/2.abd5b055.chunk.js": "/superpowered-universal-app/static/js/2.abd5b055.chunk.js",
-    "static/js/2.abd5b055.chunk.js.map": "/superpowered-universal-app/static/js/2.abd5b055.chunk.js.map",
-    "static/js/3.df7c32ea.chunk.js": "/superpowered-universal-app/static/js/3.df7c32ea.chunk.js",
-    "static/js/3.df7c32ea.chunk.js.map": "/superpowered-universal-app/static/js/3.df7c32ea.chunk.js.map",
+    "main.css": "/superpowered-universal-app/static/css/main.df3f7f6b.css",
+    "main.js": "/superpowered-universal-app/static/js/main.380992c3.js",
     "index.html": "/superpowered-universal-app/index.html",
-    "static/css/main.bffa4249.chunk.css.map": "/superpowered-universal-app/static/css/main.bffa4249.chunk.css.map",
-    "static/js/2.abd5b055.chunk.js.LICENSE.txt": "/superpowered-universal-app/static/js/2.abd5b055.chunk.js.LICENSE.txt"
+    "main.df3f7f6b.css.map": "/superpowered-universal-app/static/css/main.df3f7f6b.css.map",
+    "main.380992c3.js.map": "/superpowered-universal-app/static/js/main.380992c3.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.7760a09d.js",
-    "static/js/2.abd5b055.chunk.js",
-    "static/css/main.bffa4249.chunk.css",
-    "static/js/main.933f342e.chunk.js"
+    "static/css/main.df3f7f6b.css",
+    "static/js/main.380992c3.js"
   ]
 }
