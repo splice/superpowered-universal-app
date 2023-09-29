@@ -559,16 +559,17 @@ AGFzbQEAAAABygVbYAJ/fwBgAX8AYAF/AX9gAn9/AX9gBH9/f38Bf2AFf39/f38Bf2ADf39/AX9gA39/
         await fetch(url).then(response =>
             response.arrayBuffer()
         ).then(audiofileArrayBuffer => {
+            console.log(`${url} - 1/4 - The workers fetch got encoded audio array buffer`);
             // Copy the ArrayBuffer to WebAssembly Linear Memory.
             const audiofileInWASMHeap = Superpowered.arrayBufferToWASM(audiofileArrayBuffer);
-    
+            console.log(`${url} - 2/4 - Added arraybuffer to WASM heap`);
             // Decode the entire file into the Audio In Memory format.
             const audioInMemoryFormat = Superpowered.Decoder.decodeToAudioInMemory(audiofileInWASMHeap, audiofileArrayBuffer.byteLength);
-    
+            console.log(`${url} - 3/4 - Decoded into AudioInMemoryFormat`);
             // Copy from the WebAssembly heap into a regular ArrayBuffer that can be transfered.
             // Size calculation:  48 bytes (main table is six 64-bit numbers), plus number of audio frames (.getSize) multiplied by four (16-bit stereo is 4 bytes).
             const arrayBuffer = Superpowered.moveWASMToArrayBuffer(audioInMemoryFormat, 48 + Superpowered.AudioInMemory.getSize(audioInMemoryFormat) * 4);
-    
+            console.log(`${url} - 4/4 - Export WASM AudioInMemoryFormat into ArrayBuffer. About to post it out`);
             // Transfer the ArrayBuffer.
             if (typeof self.transfer !== 'undefined') self.transfer(url, arrayBuffer);
             else postMessage({ '__transfer__': arrayBuffer, }, [ arrayBuffer ]);
@@ -580,6 +581,7 @@ AGFzbQEAAAABygVbYAJ/fwBgAX8AYAF/AX9gAn9/AX9gBH9/f38Bf2AFf39/f38Bf2ADf39/AX9gA39/
     }
     
     registerTrackLoader(receiver) {
+        // console.log('registerTrackLoader', receiver);
         if (typeof receiver.terminate !== 'undefined') receiver.addEventListener('message', this.handleTrackLoaderMessage); // Worker
         return this.trackLoaderReceivers.push((typeof receiver.port !== 'undefined') ? receiver.port : receiver) - 1;
     }
@@ -617,9 +619,15 @@ AGFzbQEAAAABygVbYAJ/fwBgAX8AYAF/AX9gAn9/AX9gBH9/f38Bf2AFf39/f38Bf2ADf39/AX9gA39/
     transferLoadedTrack(arrayBuffer, trackLoaderWorker) {
         const receiver = this.trackLoaderReceivers[trackLoaderWorker.trackLoaderID]; 
         if (receiver == null) return;
-        if (typeof receiver.postMessage === 'function') receiver.postMessage({ SuperpoweredLoaded: { buffer: arrayBuffer, url: trackLoaderWorker.__url__ }}, [ arrayBuffer ]);
-        else receiver({ SuperpoweredLoaded: { buffer: arrayBuffer, url: trackLoaderWorker.__url__ }});
-        trackLoaderWorker.terminate();
+        if (typeof receiver.postMessage === 'function') {
+            console.log('posting buffer', trackLoaderWorker.__url__)
+            receiver.postMessage({ SuperpoweredLoaded: { buffer: arrayBuffer, url: trackLoaderWorker.__url__ }}, [ arrayBuffer ]);
+        }
+        else {
+            // console.log('callign receiver with buffer', trackLoaderWorker.__url__)
+            receiver({ SuperpoweredLoaded: { buffer: arrayBuffer, url: trackLoaderWorker.__url__ }});
+        }
+        // trackLoaderWorker.terminate();
     }
     
     downloadAndDecode(url, obj) {

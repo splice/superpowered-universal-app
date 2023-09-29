@@ -4,7 +4,7 @@ const constants = {
     SP_LICENSE_KEY: "ExampleLicenseKey-WillExpire-OnNextUpdate",
     ABSOLUTE_SP_LIBRARY_URL: `${window.location.origin}/superpowered-universal-app/lib/Superpowered.js`,
     ABSOLUTE_PROCESSOR_URL: `${window.location.origin}/superpowered-universal-app/processorScripts/mixerProcessorScript.js`,
-    RELATIVE_BACKGROUND_URL: 'images/wave.png',
+    RELATIVE_BACKGROUND_URL: `${window.location.origin}/superpowered-universal-app/images/wave.png`,
     THEME: {
         palette: {
             primary: {
