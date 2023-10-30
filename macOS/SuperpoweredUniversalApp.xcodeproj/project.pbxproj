@@ -17,8 +17,8 @@
 		986B71F42721B52900359D2D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986B71F32721B52900359D2D /* CoreAudio.framework */; };
 		9891D470275656F600881340 /* MixerEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9891D46D275656F600881340 /* MixerEngine.cpp */; };
 		9891D471275656F600881340 /* MixerChannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9891D46F275656F600881340 /* MixerChannel.cpp */; };
-		9891D4732756572900881340 /* libSuperpoweredAudioOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9891D4722756572900881340 /* libSuperpoweredAudioOSX.a */; };
 		9891D476275657D600881340 /* SuperpoweredOSXAudioIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9891D474275657D600881340 /* SuperpoweredOSXAudioIO.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1429C942AC74FD50082B8E1 /* libSuperpoweredAudio.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1429C932AC74FD40082B8E1 /* libSuperpoweredAudio.xcframework */; };
 		D534690527513F4C00A11AB6 /* AudioEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = D534690427513F4C00A11AB6 /* AudioEngine.mm */; };
 		D534690A27513FB100A11AB6 /* AudioEngineMacOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = D534690827513FB100A11AB6 /* AudioEngineMacOS.mm */; };
 		D534690D2751403D00A11AB6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D534690B27513FFE00A11AB6 /* AVFoundation.framework */; };
@@ -47,6 +47,7 @@
 		9891D4722756572900881340 /* libSuperpoweredAudioOSX.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSuperpoweredAudioOSX.a; path = ../superpowered/libSuperpoweredAudioOSX.a; sourceTree = "<group>"; };
 		9891D474275657D600881340 /* SuperpoweredOSXAudioIO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SuperpoweredOSXAudioIO.mm; path = ../../../superpowered/OpenSource/SuperpoweredOSXAudioIO.mm; sourceTree = "<group>"; };
 		9891D475275657D600881340 /* SuperpoweredOSXAudioIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperpoweredOSXAudioIO.h; path = ../../../superpowered/OpenSource/SuperpoweredOSXAudioIO.h; sourceTree = "<group>"; };
+		A1429C932AC74FD40082B8E1 /* libSuperpoweredAudio.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSuperpoweredAudio.xcframework; path = ../Superpowered/libSuperpoweredAudio.xcframework; sourceTree = "<group>"; };
 		D534690327513F4C00A11AB6 /* AudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioEngine.h; sourceTree = "<group>"; };
 		D534690427513F4C00A11AB6 /* AudioEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioEngine.mm; sourceTree = "<group>"; };
 		D534690727513FB100A11AB6 /* macOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -63,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9891D4732756572900881340 /* libSuperpoweredAudioOSX.a in Frameworks */,
+				A1429C942AC74FD50082B8E1 /* libSuperpoweredAudio.xcframework in Frameworks */,
 				D534690E2751404000A11AB6 /* CoreMedia.framework in Frameworks */,
 				986B71F02721B4AE00359D2D /* AudioUnit.framework in Frameworks */,
 				D534690D2751403D00A11AB6 /* AVFoundation.framework in Frameworks */,
@@ -116,6 +117,7 @@
 		986B71E92721B2DD00359D2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1429C932AC74FD40082B8E1 /* libSuperpoweredAudio.xcframework */,
 				9891D4722756572900881340 /* libSuperpoweredAudioOSX.a */,
 				986B71F32721B52900359D2D /* CoreAudio.framework */,
 				986B71F12721B4C200359D2D /* AudioToolbox.framework */,
@@ -363,6 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SuperpoweredUniversalApp/SuperpoweredUniversalApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -384,6 +387,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.superpowered.SuperpoweredUniversalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
@@ -394,6 +398,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SuperpoweredUniversalApp/SuperpoweredUniversalApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -415,6 +420,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.superpowered.SuperpoweredUniversalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;

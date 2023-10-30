@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		983D9970274CFFCA00B358F1 /* libSuperpoweredAudioIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D996F274CFFBF00B358F1 /* libSuperpoweredAudioIOS.a */; };
 		983D9976274D01AF00B358F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D9975274D01AF00B358F1 /* AVFoundation.framework */; };
 		983D9978274D01BC00B358F1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D9977274D01BC00B358F1 /* CoreMedia.framework */; };
 		983D997A274D01C200B358F1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D9979274D01C200B358F1 /* AudioToolbox.framework */; };
@@ -21,6 +20,7 @@
 		98F4C43E274BB3E8009C7D0F /* SuperpoweredUniversalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C42E274BB3E6009C7D0F /* SuperpoweredUniversalAppApp.swift */; };
 		98F4C440274BB3E8009C7D0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C42F274BB3E6009C7D0F /* ContentView.swift */; };
 		98F4C442274BB3E8009C7D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F4C430274BB3E8009C7D0F /* Assets.xcassets */; };
+		A1429C902AC741010082B8E1 /* libSuperpoweredAudio.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1429C8F2AC741000082B8E1 /* libSuperpoweredAudio.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +51,7 @@
 		98F4C42F274BB3E6009C7D0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98F4C430274BB3E8009C7D0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98F4C435274BB3E8009C7D0F /* SuperpoweredUniversalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperpoweredUniversalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1429C8F2AC741000082B8E1 /* libSuperpoweredAudio.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSuperpoweredAudio.xcframework; path = ../Superpowered/libSuperpoweredAudio.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +61,7 @@
 			files = (
 				983D9978274D01BC00B358F1 /* CoreMedia.framework in Frameworks */,
 				983D9976274D01AF00B358F1 /* AVFoundation.framework in Frameworks */,
-				983D9970274CFFCA00B358F1 /* libSuperpoweredAudioIOS.a in Frameworks */,
+				A1429C902AC741010082B8E1 /* libSuperpoweredAudio.xcframework in Frameworks */,
 				983D997A274D01C200B358F1 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +72,7 @@
 		983D996E274CFFBF00B358F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1429C8F2AC741000082B8E1 /* libSuperpoweredAudio.xcframework */,
 				983D99A2274D64AB00B358F1 /* CoreMedia.framework */,
 				983D99A0274D648A00B358F1 /* AVFoundation.framework */,
 				983D999E274D63A500B358F1 /* CoreAudio.framework */,

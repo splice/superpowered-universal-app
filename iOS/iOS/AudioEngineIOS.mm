@@ -14,14 +14,10 @@
 @end
 
 @implementation AudioEngineIOS {
-    float *buffer;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
-
-        buffer = (float*) malloc(sizeof(float) * 48000 * 2);
-
         _audioIO = [[SuperpoweredIOSAudioIO alloc] initWithDelegate:(id<SuperpoweredIOSAudioIODelegate>)self preferredBufferSize:12 preferredSamplerate:44100 audioSessionCategory:AVAudioSessionCategoryPlayback channels:2 audioProcessingCallback:audioProcessing clientdata:(__bridge void *)self];
 
         [_audioIO start];
@@ -30,24 +26,18 @@
 }
 
 - (void)dealloc {
-    free(buffer);
 }
 
-static bool audioProcessing(void *clientdata, float **inputBuffers, unsigned int inputChannels, float **outputBuffers, unsigned int outputChannels, unsigned int numberOfFrames, unsigned int samplerate, uint64_t hostTime) {
+static bool audioProcessing(void *clientdata, float *input, float *output, unsigned int numberOfFrames, unsigned int samplerate, uint64_t hostTime) {
     __unsafe_unretained AudioEngineIOS *self = (__bridge AudioEngineIOS *)clientdata;
-    bool result = [self audioProcessing:outputBuffers[0] right:outputBuffers[1] numFrames:numberOfFrames samplerate:samplerate];
+    bool result = [self audioProcessing:output numFrames:numberOfFrames samplerate:samplerate];
     return result;
 }
 
-- (bool)audioProcessing:(float *)leftOutput right:(float *)rightOutput numFrames:(unsigned int)numberOfFrames samplerate:(unsigned int)samplerate {
-    memset(buffer, 0, sizeof(float) * numberOfFrames * 2);
-    Superpowered::Interleave(leftOutput, rightOutput, buffer, numberOfFrames);
-    BOOL hasOutput = [self processBuffer:buffer numberOfFrames:numberOfFrames sampleRate:samplerate];
-    if (!hasOutput) {
-        memset(buffer, 0, sizeof(float) * numberOfFrames * 2);
-    }
-    Superpowered::DeInterleave(buffer, leftOutput, rightOutput, numberOfFrames);
-    return true;
+
+- (bool)audioProcessing:(float *)output numFrames:(unsigned int)numberOfFrames samplerate:(unsigned int)samplerate {
+    BOOL hasOutput = [self processBuffer:output numberOfFrames:numberOfFrames sampleRate:samplerate];
+    return hasOutput;
 }
 
 

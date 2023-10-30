@@ -16,7 +16,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        Initialize("ExampleLicenseKey-WillExpire-OnNextUpdate", false, false, true, true, true, false, false);
+        Initialize("ExampleLicenseKey-WillExpire-OnNextUpdate");
 
         MixerChannelAsset assetA = MixerChannelAsset();
         assetA.filePath = [[[NSBundle mainBundle] pathForResource:@"lycka" ofType:@"mp3"] fileSystemRepresentation];
