@@ -1,9 +1,11 @@
 // Import the SuperpoweredWebAudio helper to allow us to extend the SuperpoweredWebAudio.AudioWorkletProcessor class
-import "../lib/Superpowered.js";
+import "https://creativelycommon-public-assets.s3.eu-west-2.amazonaws.com/superpowered/2.6.2/superpowered.wasm";
+
 import MixerEngine from './mixerEngine.js';
 
 class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
- 
+
+
   onReady() {
     this.started = false;
     this.assetsLoaded = 0;

@@ -25,13 +25,13 @@ const Mixer = () => {
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    loadSP();
+    // loadSP();
   }, []);
 
   const loadSP = async () => {
                 
-    await AudioEngine.loadSuperpoweredLibrary(constants.SP_LICENSE_KEY, constants.ABSOLUTE_SP_LIBRARY_URL);
-
+    await AudioEngine.loadSuperpoweredLibrary(constants.SP_LICENSE_KEY);
+    console.log('loaded SP');
     processorNode.current = await AudioEngine.webaudioManager.createAudioNodeAsync(
       constants.ABSOLUTE_PROCESSOR_URL,
       "MixerProcessor",
@@ -213,6 +213,15 @@ const Mixer = () => {
           }
         />
         <Box sx={{ width: "100%", marginTop: "10px", marginBottom: "10px" }}>
+        <Button
+          variant="contained"
+          
+          // disabled={!assetsLoaded}
+          onClick={() => setTimeout(()=>loadSP(), 1000)}
+          
+        >
+        Load tracks
+        </Button>
         <Button
           variant="contained"
           
