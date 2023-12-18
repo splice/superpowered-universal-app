@@ -30,7 +30,9 @@ const Mixer = () => {
 
   const loadSP = async () => {
                 
-    await AudioEngine.loadSuperpoweredLibrary(constants.SP_LICENSE_KEY, constants.ABSOLUTE_SP_LIBRARY_URL);
+  await AudioEngine.loadSuperpoweredLibrary(constants.SP_LICENSE_KEY);
+    console.log('loaded SP', constants.ABSOLUTE_PROCESSOR_URL);
+
 
     processorNode.current = await AudioEngine.webaudioManager.createAudioNodeAsync(
       constants.ABSOLUTE_PROCESSOR_URL,
@@ -77,14 +79,14 @@ const Mixer = () => {
         id: "loadPlayerAssets",
         assets: [
           {
-            url: "/superpowered-universal-app/audio/lycka.mp3",
-            originalBPM: 126,
-            firstBeatMs: 353,
+            url: "/superpowered-universal-app/audio/110-click-hithat-left.wav",
+            originalBPM: 110,
+            firstBeatMs: 0,
           },
           {
-            url: "/superpowered-universal-app/audio/nuyorica.m4a",
-            originalBPM: 123,
-            firstBeatMs: 40,
+            url: "/superpowered-universal-app/audio/130-click-snare-right.wav",
+            originalBPM: 130,
+            firstBeatMs: 0,
           },
         ],
       },
@@ -110,6 +112,17 @@ const Mixer = () => {
       type: "command",
       payload: {
         id: playing ? "stopPlayback" : "startPlayback",
+      },
+    });
+  };
+
+  const sendStartCommand = (channelIndex, isMaster) => {
+    processorNode.current.sendMessageToAudioScope({
+      type: "command",
+      payload: {
+        id: 'startPlaybackChannel',
+        channelIndex,
+        isMaster
       },
     });
   };
@@ -164,7 +177,7 @@ const Mixer = () => {
       <Box sx={{ background: 'white', padding: '10px 20px', borderRadius: '15px', width: "80%", marginBottom: "10px" }}>
         <small>TEMPO</small>
         <Slider
-          min={80}
+          min={40}
           max={150}
           step={1}
           marks={[
@@ -213,9 +226,21 @@ const Mixer = () => {
           }
         />
         <Box sx={{ width: "100%", marginTop: "10px", marginBottom: "10px" }}>
+        {/* <Button
+          variant="contained"
+          
+<<<<<<< Updated upstream
+=======
+          // disabled={!assetsLoaded}
+          onClick={() => setTimeout(()=>loadSP(), 1000)}
+          
+        >
+        Load tracks
+        </Button> */}
         <Button
           variant="contained"
           
+>>>>>>> Stashed changes
           disabled={!assetsLoaded}
           onClick={() => sendPlayCommand()}
           
@@ -223,6 +248,37 @@ const Mixer = () => {
         {!assetsLoaded ? "Loading.." : "Start/Stop"}
         </Button>
         </Box>
+        <Box sx={{ width: "100%", marginTop: "10px", marginBottom: "10px" }}>
+        {/* <Button
+          variant="contained"
+          
+          // disabled={!assetsLoaded}
+          onClick={() => setTimeout(()=>loadSP(), 1000)}
+          
+        >
+        Load tracks
+        </Button> */}
+        <Button
+          variant="contained"
+          
+          disabled={!assetsLoaded}
+          onClick={() => sendStartCommand(0, true)}
+          
+        >
+        Start A
+        </Button>
+        <Button
+          variant="contained"
+          
+          disabled={!assetsLoaded}
+          onClick={() => sendStartCommand(1, false)}
+          
+        >
+        Start B
+        </Button>
+        </Box>
+
+
       </Box>
     </MixerContainer>
   );

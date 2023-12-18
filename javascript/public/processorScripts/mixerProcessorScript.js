@@ -1,5 +1,7 @@
 // Import the SuperpoweredWebAudio helper to allow us to extend the SuperpoweredWebAudio.AudioWorkletProcessor class
-import "../lib/Superpowered.js";
+
+import "../Superpowered.js";
+
 import MixerEngine from './mixerEngine.js';
 
 class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {

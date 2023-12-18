@@ -1,4 +1,5 @@
 // Here we create a centralised audio engine, outside of React's lifecycles.
+import { SuperpoweredGlue, SuperpoweredWebAudio } from '@superpoweredsdk/web';
 
 class AudioEngine {
     initted = false;
@@ -9,8 +10,11 @@ class AudioEngine {
         
         if (!this.initted && !this.requested) {
             this.requested = true;
-            // Here we tell Superpowered to pull a publically available copy of the lib in at runtime to avoid bundler/transpiler issues
-            await import(/* webpackIgnore: true */ libraryUrl);
+            
+            this.superpowered = await SuperpoweredGlue.Instantiate(
+                licenseKey,
+            );
+            console.log(`Superpowered version: ${this.superpowered.Version()}`);
 
             // With the Superpowered library imported, we now instantiate it.
             // eslint-disable-next-line no-undef

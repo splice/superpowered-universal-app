@@ -8,6 +8,7 @@
     "@mui/material": "^5.14.10",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
     "@mui/styled-engine-sc": "^5.14.10",
+    "@superpoweredsdk/web": "^2.6.4",
     "gh-pages": "^3.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
