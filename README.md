@@ -57,7 +57,7 @@ Linux was deliberately not included as a target in this demonstration applicatio
 
 ## Shared codebase
 
-Superpowered is a cross platform C++ and WebAssembly audio SDK library which allows you to use the same API across all platforms. For native platforms, we can easily share the C++ audio code (with some small bridges to our implementation language). On Javascript, we can duplicate the C++ classes using the same Superpowered API calls, but just written in Javascript to be executed by the WebAssembly version of the library. You'll get **very very** near native performance with the use of the WebAssembly Superpowered library.
+Superpowered is a cross platform C++ and WebAssembly audio SDK library which allows you to use the same API across all platforms. For native platforms, we can easily share the C++ audio code (with some small bridges to our implementation language). On Javascript, we can duplicate the C++ classes using the same Superpowered API calls, but just written in Javascript to be executed by the WebAssembly version of the library. You'll get near native performance with the use of the WebAssembly Superpowered library.
 
 ## Application structure
 

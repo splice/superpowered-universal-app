@@ -32,6 +32,7 @@ android { // main settings for your application
     }
 
     ndkVersion '25.1.8937393'
+    namespace 'com.superpowered.boilerplate'
 }
 
 dependencies {

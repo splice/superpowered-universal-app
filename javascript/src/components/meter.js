@@ -19,7 +19,7 @@ const Meter = ({peaks, direction, width, height}) => {
             if (peaks.stereo > previousValue.current) {
                 nextValue = peaks.stereo
             } else {
-                nextValue = previousValue.current * 0.99;
+                nextValue = previousValue.current * 0.997;
             }
             if (direction === 'vertical') {
                 canvasContext.current.fillRect(0, canvasRef.current.height, canvasRef.current.width, -canvasRef.current.height* nextValue);

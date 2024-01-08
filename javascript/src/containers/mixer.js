@@ -29,8 +29,8 @@ const Mixer = () => {
   }, []);
 
   const loadSP = async () => {
-                
-    await AudioEngine.loadSuperpoweredLibrary(constants.SP_LICENSE_KEY, constants.ABSOLUTE_SP_LIBRARY_URL);
+    // Here we start the AudioEngine, which instantiates
+    await AudioEngine.loadSuperpoweredLibrary(constants.SP_LICENSE_KEY);
 
     processorNode.current = await AudioEngine.webaudioManager.createAudioNodeAsync(
       constants.ABSOLUTE_PROCESSOR_URL,
@@ -49,14 +49,17 @@ const Mixer = () => {
   };
 
   const startMeterRenderingDataRequestInterval = () => {
-    setInterval(() => {
+    const requestPeaks = () => 
+    {
       processorNode.current.sendMessageToAudioScope({
         type: "command",
         payload: {
           id: "requestPeaks",
         },
       });
-    }, 50);
+      requestAnimationFrame(requestPeaks);
+    }
+    requestPeaks();
   };
 
   const onMessageProcessorAudioScope = (message) => {

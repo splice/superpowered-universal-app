@@ -1,14 +1,14 @@
 {
   "name": "superpowered-universal-app",
   "homepage": "/superpowered-universal-app/",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "dependencies": {
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.14.10",
-    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
+    "@mui/styled-engine": "^5.14.10",
     "@mui/styled-engine-sc": "^5.14.10",
-    "gh-pages": "^3.2.3",
+    "@superpoweredsdk/web": "^2.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-corner": "^2.5.0",
@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "gh-pages": "^6.1.1"
   }
 }
