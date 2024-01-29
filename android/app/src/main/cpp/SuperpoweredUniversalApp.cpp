@@ -79,7 +79,7 @@ bool SuperpoweredUniversalApp::process(short int *output, unsigned int numberOfF
 static SuperpoweredUniversalApp *example = NULL;
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_SuperpoweredUniversalApp(
+Java_com_superpowered_universalpapp_MainActivity_SuperpoweredUniversalApp(
 		JNIEnv *env,
 		jobject __unused obj,
 		jint samplerate,  // device native sample rate
@@ -96,7 +96,7 @@ Java_com_superpowered_boilerplate_MainActivity_SuperpoweredUniversalApp(
 }
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_MixerTogglePlay(
+Java_com_superpowered_universalpapp_MainActivity_MixerTogglePlay(
         JNIEnv *env,
         jobject __unused obj
 ) {
@@ -104,7 +104,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerTogglePlay(
 }
 
 extern "C" JNIEXPORT float
-Java_com_superpowered_boilerplate_MainActivity_MixerGetPeak(
+Java_com_superpowered_universalpapp_MainActivity_MixerGetPeak(
 		JNIEnv *env,
 		jobject __unused obj
 ) {
@@ -112,7 +112,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerGetPeak(
 }
 
 extern "C" JNIEXPORT float
-Java_com_superpowered_boilerplate_MainActivity_MixerGetPeakForChannel(
+Java_com_superpowered_universalpapp_MainActivity_MixerGetPeakForChannel(
 		JNIEnv *env,
 		jobject __unused obj,
 		int channel
@@ -121,7 +121,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerGetPeakForChannel(
 }
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_MixerSetCrossFaderPosition(
+Java_com_superpowered_universalpapp_MainActivity_MixerSetCrossFaderPosition(
 		JNIEnv *env,
 		jobject __unused obj,
 		float newValue
@@ -130,7 +130,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerSetCrossFaderPosition(
 }
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_MixerSetTempo(
+Java_com_superpowered_universalpapp_MainActivity_MixerSetTempo(
 		JNIEnv *env,
 		jobject __unused obj,
 		float newValue
@@ -139,7 +139,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerSetTempo(
 }
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_MixerSetFilterFrequencyPositionForChannel(
+Java_com_superpowered_universalpapp_MainActivity_MixerSetFilterFrequencyPositionForChannel(
 		JNIEnv *env,
 		jobject __unused obj,
 		int channel,
@@ -149,7 +149,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerSetFilterFrequencyPositionFo
 }
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_MixerSetVolumeForChannel(
+Java_com_superpowered_universalpapp_MainActivity_MixerSetVolumeForChannel(
 		JNIEnv *env,
 		jobject __unused obj,
 		int channel,
@@ -159,7 +159,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerSetVolumeForChannel(
 }
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_MixerSetRollEnabledForChannel(
+Java_com_superpowered_universalpapp_MainActivity_MixerSetRollEnabledForChannel(
 		JNIEnv *env,
 		jobject __unused obj,
 		int channel,
@@ -169,7 +169,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerSetRollEnabledForChannel(
 }
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_MixerSetRollDisabledForChannel(
+Java_com_superpowered_universalpapp_MainActivity_MixerSetRollDisabledForChannel(
 		JNIEnv *env,
 		jobject __unused obj,
 		int channel
@@ -178,7 +178,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerSetRollDisabledForChannel(
 }
 
 extern "C" JNIEXPORT void
-Java_com_superpowered_boilerplate_MainActivity_MixerSetPitchShiftForChannel(
+Java_com_superpowered_universalpapp_MainActivity_MixerSetPitchShiftForChannel(
 		JNIEnv *env,
 		jobject __unused obj,
 		int channel,
@@ -188,7 +188,7 @@ Java_com_superpowered_boilerplate_MainActivity_MixerSetPitchShiftForChannel(
 }
 
 extern "C" JNIEXPORT int
-Java_com_superpowered_boilerplate_MainActivity_MixerGetPitchShiftForChannel(
+Java_com_superpowered_universalpapp_MainActivity_MixerGetPitchShiftForChannel(
 		JNIEnv *env,
 		jobject __unused obj,
 		int channel

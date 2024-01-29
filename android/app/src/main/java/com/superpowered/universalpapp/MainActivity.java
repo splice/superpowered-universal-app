@@ -1,15 +1,12 @@
-package com.superpowered.boilerplate;
+package com.superpowered.universalpapp;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.AssetFileDescriptor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.media.AudioManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -22,8 +19,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.Manifest;
-
-
+import com.superpowered.boilerplate.R;
 
 import java.io.IOException;
 import java.util.Timer;

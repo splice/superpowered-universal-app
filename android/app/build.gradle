@@ -6,7 +6,7 @@ android { // main settings for your application
     compileSdkVersion = 33
 
     defaultConfig {
-        applicationId "com.superpowered.boilerplate"
+        applicationId "com.superpowered.universalpapp"
         minSdkVersion 24
         targetSdkVersion 33
         versionCode 1
