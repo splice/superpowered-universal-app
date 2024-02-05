@@ -1,9 +1,11 @@
 package com.superpowered.universalpapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.res.AssetFileDescriptor;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,9 +14,12 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import androidx.annotation.NonNull;
 
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
     SeekBar crossfadeSeekBar;
     ProgressBar masterProgressBar;
     Button playButton;
+
+    ImageView infoButton;
 
     float channel0Roll = 0;
     float channel1Roll = 0;
@@ -287,12 +294,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        infoButton =  (ImageView) findViewById(R.id.info_button);
+        infoButton.setOnClickListener(view -> {
+            showCreditsDialog();
+        });
+
 
         Timer myTimer = new Timer();
         myTimer.schedule(new TimerTask() {
             @Override
             public void run() {UpdateGUI();}
         }, 0, 100);
+    }
+
+    private void showCreditsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Song Credits");
+
+        // Use a scrollable TextView in the dialog for long messages
+        ScrollView scrollView = new ScrollView(this);
+        TextView textView = new TextView(this);
+        textView.setPadding(32, 32, 32, 32); // Add padding for aesthetic spacing
+        textView.setText("Stardust (Ziggy is coming) by Kraftamt (c) copyright 2020 Licensed under a Creative Commons Attribution Noncommercial (3.0) license. https://dig.ccmixter.org/files/Karstenholymoly/62493 Ft: Platinum Butterfly\n\n" +
+                "Waste Sound by Wiseman (c) copyright 2023 Licensed under a Creative Commons Attribution Noncommercial (4.0) license. https://dig.ccmixter.org/files/Wiseman/66831");
+        textView.setMovementMethod(LinkMovementMethod.getInstance()); // Make links clickable
+        scrollView.addView(textView);
+
+        builder.setView(scrollView);
+
+        builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void UpdateGUI() {
