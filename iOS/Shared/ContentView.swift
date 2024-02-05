@@ -24,7 +24,9 @@ struct ContentView: View {
     @State private var channel1FilterFrequencyPosition: Float = 0.5
     @State private var channel0Roll: Float = 0
     @State private var channel1Roll: Float = 0
-    
+
+    @State private var showInfoDialog = false
+
     private var volumeSliderHeight: CGFloat = 250
     private var filterSliderHeight: CGFloat = 95
     private var channelMeterHeight: CGFloat = 250
@@ -33,12 +35,23 @@ struct ContentView: View {
     private var progressWidth: CGFloat = 10
     private var buttonFontSize: CGFloat = 14
     var body: some View {
-        
+
         VStack(alignment: .center) {
-            HStack(alignment: .top){
+            HStack {
+                Spacer()
+                Spacer()
                 Image("superpoweredLogo")
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 200.0, height: 30)
+                Spacer()
+                Button(action: {
+                    showInfoDialog.toggle()
+                }) {
+                    Image(systemName: "info.circle")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.blue)
+                }
             }
             HStack(alignment: .bottom) {
                 VStack {
@@ -375,6 +388,9 @@ struct ContentView: View {
 
             }
         }
+        .alert(isPresented: $showInfoDialog) {
+                    Alert(title: Text("Song Credits"), message: Text("Stardust (Ziggy is coming) by Kraftamt (c) copyright 2020 Licensed under a Creative Commons Attribution Noncommercial (3.0) license. https://dig.ccmixter.org/files/Karstenholymoly/62493 Ft: Platinum Butterfly\n\nWaste Sound by Wiseman (c) copyright 2023 Licensed under a Creative Commons Attribution Noncommercial (4.0) license. https://dig.ccmixter.org/files/Wiseman/66831"), dismissButton: .default(Text("Close")))
+                }
         .padding(20.0)
         .background(
             Image("bg"),
