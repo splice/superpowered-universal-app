@@ -352,8 +352,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-        AssetFileDescriptor fd0 = getResources().openRawResourceFd(R.raw.lycka);
-        AssetFileDescriptor fd1 = getResources().openRawResourceFd(R.raw.nuyorica);
+        AssetFileDescriptor fd0 = getResources().openRawResourceFd(R.raw.wiseman_a);
+        AssetFileDescriptor fd1 = getResources().openRawResourceFd(R.raw.karstenholymoly_b);
         int fileAoffset = (int)fd0.getStartOffset();
         int fileAlength = (int)fd0.getLength();
         int fileBoffset = (int)fd1.getStartOffset();

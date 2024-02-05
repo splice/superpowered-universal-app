@@ -33,15 +33,15 @@ SuperpoweredUniversalApp::SuperpoweredUniversalApp (
 	assetA.filePath = path;
 	assetA.fileOffset = fileAOffset;
 	assetA.fileLength = fileALength;
-	assetA.originalBPM = 126;
-	assetA.firstBeatMs = 353;
+	assetA.originalBPM = 100;
+	assetA.firstBeatMs = 31;
 
 	MixerChannelAsset assetB = MixerChannelAsset();
 	assetB.filePath = path;
 	assetB.fileOffset = fileBOffset;
 	assetB.fileLength = fileBLength;
-	assetB.originalBPM = 123;
-	assetB.firstBeatMs = 40;
+	assetB.originalBPM = 100;
+	assetB.firstBeatMs = 1836;
 
 	mixer = new MixerEngine(assetA, assetB);
 
