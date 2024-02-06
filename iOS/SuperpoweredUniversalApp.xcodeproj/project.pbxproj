@@ -52,6 +52,7 @@
 		A1429C8F2AC741000082B8E1 /* libSuperpoweredAudio.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSuperpoweredAudio.xcframework; path = ../Superpowered/libSuperpoweredAudio.xcframework; sourceTree = "<group>"; };
 		A1AD27AE2B710B4E00948064 /* wiseman_a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wiseman_a.mp3; sourceTree = "<group>"; };
 		A1AD27AF2B710B4E00948064 /* karstenholymoly_b.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = karstenholymoly_b.mp3; sourceTree = "<group>"; };
+		A1E79A1A2B7248240018EA9D /* SuperpoweredUniversalApp--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SuperpoweredUniversalApp--iOS--Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +114,7 @@
 		98F4C428274BB3E6009C7D0F = {
 			isa = PBXGroup;
 			children = (
+				A1E79A1A2B7248240018EA9D /* SuperpoweredUniversalApp--iOS--Info.plist */,
 				98F4C42D274BB3E6009C7D0F /* Shared */,
 				983D9993274D601200B358F1 /* iOS */,
 				98F4C436274BB3E8009C7D0F /* Products */,
@@ -355,6 +357,10 @@
 				DEVELOPMENT_TEAM = Z674RYS8AW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SuperpoweredUniversalApp--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to the microphone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -388,6 +394,10 @@
 				DEVELOPMENT_TEAM = Z674RYS8AW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SuperpoweredUniversalApp--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to the microphone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
