@@ -26,6 +26,21 @@ export const Platforms = styled.div`
     margin-bottom: 20px;
 `;
 
+export const Credits = styled.div`
+    max-width: 400px;
+    div {
+        margin-top: 20px;
+    }
+`;
+
+export const FooterContainer = styled.div`
+    padding: 20px;
+    margin: 10px 0px;
+    background: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 10px 10px #e7e5e5;
+`
+
 export const GithubLink = styled.a`
     background: ${props => props.theme.palette.primary.main};
     padding: 10px 20px;

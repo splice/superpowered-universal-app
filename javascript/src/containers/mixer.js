@@ -19,6 +19,8 @@ const masterPeaks = {
   stereo: 0,
 };
 
+const INITIAL_TEMPO = 105;
+
 const Mixer = () => {
   const processorNode = useRef();
   const [assetsLoaded, setAssetsLoaded] = useState(false);
@@ -70,6 +72,7 @@ const Mixer = () => {
     }
     if (message.event === "assetsLoaded") {
       setAssetsLoaded(true);
+      sendTempoCommand(INITIAL_TEMPO)
     }
   };
 
@@ -80,14 +83,14 @@ const Mixer = () => {
         id: "loadPlayerAssets",
         assets: [
           {
-            url: "/superpowered-universal-app/audio/lycka.mp3",
-            originalBPM: 126,
-            firstBeatMs: 353,
+            url: "/superpowered-universal-app/audio/ramblinglibrarian.mp3",
+            originalBPM: 120,
+            firstBeatMs: 2024,
           },
           {
-            url: "/superpowered-universal-app/audio/nuyorica.m4a",
-            originalBPM: 123,
-            firstBeatMs: 40,
+            url: "/superpowered-universal-app/audio/cdk.mp3",
+            originalBPM: 101,
+            firstBeatMs: 31,
           },
         ],
       },
@@ -112,7 +115,7 @@ const Mixer = () => {
     processorNode.current.sendMessageToAudioScope({
       type: "command",
       payload: {
-        id: playing ? "stopPlayback" : "startPlayback",
+        id: playing ? "stopPlayback" : "startPlayback"
       },
     });
   };
@@ -181,7 +184,7 @@ const Mixer = () => {
             },
             {
               value: 100,
-              label: "80",
+              label: "100",
             },
             {
               value: 110,
@@ -204,7 +207,7 @@ const Mixer = () => {
               label: "150",
             },
           ]}
-          defaultValue={126}
+          defaultValue={INITIAL_TEMPO}
           onChange={(v) => sendTempoCommand(v)}
         />
       </Box>

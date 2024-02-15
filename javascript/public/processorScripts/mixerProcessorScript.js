@@ -62,10 +62,10 @@ class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
         
       }
       if (message.payload?.id === "startPlayback") {
-        this.channelA.configure(126, 353);
-        this.channelB.configure(123, 40);
-        this.channelA.setSyncToBPM(this.channelA.getCurrentBPM());
-        this.channelB.setSyncToBPM(this.channelA.getCurrentBPM());
+        this.channelA.configure(this.channelA.player.originalBPM, this.channelA.player.firstBeatMs);
+        this.channelB.configure(this.channelB.player.originalBPM, this.channelB.player.firstBeatMs);
+        this.channelA.setSyncToBPM(this.tempo);
+        this.channelB.setSyncToBPM(this.tempo);
 
         this.mixerEngine.togglePlay();
       }
@@ -74,6 +74,7 @@ class MixerProcessor extends SuperpoweredWebAudio.AudioWorkletProcessor {
       }
       
       if (message.payload?.id === 'setTempo') {
+        this.tempo = message.payload.tempo;
         this.mixerEngine.setTempo(message.payload.tempo)
       }
       if (message.payload?.id === 'requestPeaks') {
