@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    let audioEngine = AudioEngineIOS()
+    let audioEngine: AudioEngineIOS
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
+    init(_ audioEngine: AudioEngineIOS) {
+        self.audioEngine = audioEngine
+    }
+
     @State private var channel0Volume: Float = 0.8;
     @State private var channel1Volume: Float = 0.8;
     @State private var peak: Float = 0
@@ -25,8 +29,6 @@ struct ContentView: View {
     @State private var channel0Roll: Float = 0
     @State private var channel1Roll: Float = 0
 
-    @State private var showInfoDialog = false
-
     private var volumeSliderHeight: CGFloat = 250
     private var filterSliderHeight: CGFloat = 95
     private var channelMeterHeight: CGFloat = 250
@@ -37,22 +39,6 @@ struct ContentView: View {
     var body: some View {
 
         VStack(alignment: .center) {
-            HStack {
-                Spacer()
-                Spacer()
-                Image("superpoweredLogo")
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200.0, height: 30)
-                Spacer()
-                Button(action: {
-                    showInfoDialog.toggle()
-                }) {
-                    Image(systemName: "info.circle")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                        .foregroundColor(.blue)
-                }
-            }
             HStack(alignment: .bottom) {
                 VStack {
                     HStack {
@@ -388,24 +374,52 @@ struct ContentView: View {
 
             }
         }
-        .alert(isPresented: $showInfoDialog) {
-                    Alert(title: Text("Music Credits"), message: Text("ＭＩＬＬＥＮＮＩＡＬＳ by cdk (c) copyright 2018 Licensed under a Creative Commons Attribution (3.0) license.\nhttps://dig.ccmixter.org/files/cdk/57150\n\nI Have Often Told You Stories (guitar instrumental) by Ivan Chew (c) copyright 2013 Licensed under a Creative Commons Attribution (3.0) license.\nhttps://dig.ccmixter.org/files/ramblinglibrarian/41284"), dismissButton: .default(Text("Close")))
+    }
+}
+
+struct ContainerView: View {
+    let audioEngine = AudioEngineIOS()
+
+    @State private var showInfoDialog = false
+
+    var body: some View {
+
+        VStack(alignment: .center) {
+            HStack {
+                Spacer()
+                Spacer()
+                Image("superpoweredLogo")
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200.0, height: 30)
+                Spacer()
+                Button(action: {
+                    showInfoDialog.toggle()
+                }) {
+                    Image(systemName: "info.circle")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.blue)
                 }
+            }
+
+            ContentView(audioEngine)
+        }
+        .alert(isPresented: $showInfoDialog) {
+            Alert(title: Text("Music Credits"), message: Text("ＭＩＬＬＥＮＮＩＡＬＳ by cdk (c) copyright 2018 Licensed under a Creative Commons Attribution (3.0) license.\nhttps://dig.ccmixter.org/files/cdk/57150\n\nI Have Often Told You Stories (guitar instrumental) by Ivan Chew (c) copyright 2013 Licensed under a Creative Commons Attribution (3.0) license.\nhttps://dig.ccmixter.org/files/ramblinglibrarian/41284"), dismissButton: .default(Text("Close")))
+        }
         .padding(20.0)
         .background(
             Image("bg"),
 
             alignment: .bottom
-        ).scaledToFit();
+        ).scaledToFit()
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
-            ContentView()
+            ContainerView()
         }
     }
 }

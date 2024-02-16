@@ -18,7 +18,7 @@
 		9891D47D2756635600881340 /* MixerChannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9891D47B2756635600881340 /* MixerChannel.cpp */; };
 		9891D4802756639A00881340 /* SuperpoweredIOSAudioIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9891D47E2756639900881340 /* SuperpoweredIOSAudioIO.mm */; };
 		98F4C43E274BB3E8009C7D0F /* SuperpoweredUniversalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C42E274BB3E6009C7D0F /* SuperpoweredUniversalAppApp.swift */; };
-		98F4C440274BB3E8009C7D0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C42F274BB3E6009C7D0F /* ContentView.swift */; };
+		98F4C440274BB3E8009C7D0F /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C42F274BB3E6009C7D0F /* ContainerView.swift */; };
 		98F4C442274BB3E8009C7D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F4C430274BB3E8009C7D0F /* Assets.xcassets */; };
 		A1429C902AC741010082B8E1 /* libSuperpoweredAudio.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1429C8F2AC741000082B8E1 /* libSuperpoweredAudio.xcframework */; };
 /* End PBXBuildFile section */
@@ -48,7 +48,7 @@
 		9891D47E2756639900881340 /* SuperpoweredIOSAudioIO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SuperpoweredIOSAudioIO.mm; path = ../../superpowered/OpenSource/SuperpoweredIOSAudioIO.mm; sourceTree = "<group>"; };
 		9891D47F2756639900881340 /* SuperpoweredIOSAudioIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperpoweredIOSAudioIO.h; path = ../../superpowered/OpenSource/SuperpoweredIOSAudioIO.h; sourceTree = "<group>"; };
 		98F4C42E274BB3E6009C7D0F /* SuperpoweredUniversalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperpoweredUniversalAppApp.swift; sourceTree = "<group>"; };
-		98F4C42F274BB3E6009C7D0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		98F4C42F274BB3E6009C7D0F /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		98F4C430274BB3E8009C7D0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98F4C435274BB3E8009C7D0F /* SuperpoweredUniversalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperpoweredUniversalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1429C8F2AC741000082B8E1 /* libSuperpoweredAudio.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libSuperpoweredAudio.xcframework; path = ../Superpowered/libSuperpoweredAudio.xcframework; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				4F73AF8C2B7F86DA00D7FE41 /* cdk_b.mp3 */,
 				4F73AF8D2B7F86DA00D7FE41 /* ramblinglibrarian_a.mp3 */,
 				98F4C42E274BB3E6009C7D0F /* SuperpoweredUniversalAppApp.swift */,
-				98F4C42F274BB3E6009C7D0F /* ContentView.swift */,
+				98F4C42F274BB3E6009C7D0F /* ContainerView.swift */,
 				98F4C430274BB3E8009C7D0F /* Assets.xcassets */,
 				983D9980274D109F00B358F1 /* AudioEngine.h */,
 				983D9981274D109F00B358F1 /* AudioEngine.mm */,
@@ -218,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98F4C440274BB3E8009C7D0F /* ContentView.swift in Sources */,
+				98F4C440274BB3E8009C7D0F /* ContainerView.swift in Sources */,
 				98F4C43E274BB3E8009C7D0F /* SuperpoweredUniversalAppApp.swift in Sources */,
 				983D9992274D5FF900B358F1 /* AudioEngineIOS.mm in Sources */,
 				9891D4802756639A00881340 /* SuperpoweredIOSAudioIO.mm in Sources */,
