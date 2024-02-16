@@ -315,8 +315,8 @@ public class MainActivity extends AppCompatActivity {
         ScrollView scrollView = new ScrollView(this);
         TextView textView = new TextView(this);
         textView.setPadding(32, 32, 32, 32); // Add padding for aesthetic spacing
-        textView.setText("Stardust (Ziggy is coming) by Kraftamt (c) copyright 2020 Licensed under a Creative Commons Attribution Noncommercial (3.0) license. https://dig.ccmixter.org/files/Karstenholymoly/62493 Ft: Platinum Butterfly\n\n" +
-                "Waste Sound by Wiseman (c) copyright 2023 Licensed under a Creative Commons Attribution Noncommercial (4.0) license. https://dig.ccmixter.org/files/Wiseman/66831");
+        textView.setText("I Have Often Told You Stories (guitar instrumental) by Ivan Chew (c) copyright 2013 Licensed under a Creative Commons Attribution (3.0) license. https://dig.ccmixter.org/files/ramblinglibrarian/41284 \n\n" +
+                "ＭＩＬＬＥＮＮＩＡＬＳ by cdk (c) copyright 2018 Licensed under a Creative Commons Attribution (3.0) license. https://dig.ccmixter.org/files/cdk/57150 ");
         textView.setMovementMethod(LinkMovementMethod.getInstance()); // Make links clickable
         scrollView.addView(textView);
 
