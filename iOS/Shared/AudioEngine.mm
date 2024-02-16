@@ -19,14 +19,14 @@
         Initialize("ExampleLicenseKey-WillExpire-OnNextUpdate");
 
         MixerChannelAsset assetA = MixerChannelAsset();
-        assetA.filePath = [[[NSBundle mainBundle] pathForResource:@"wiseman_a" ofType:@"mp3"] fileSystemRepresentation];
-        assetA.originalBPM = 100;
-        assetA.firstBeatMs = 31;
+        assetA.filePath = [[[NSBundle mainBundle] pathForResource:@"ramblinglibrarian_a" ofType:@"mp3"] fileSystemRepresentation];
+        assetA.originalBPM = 120;
+        assetA.firstBeatMs = 2024;
 
         MixerChannelAsset assetB = MixerChannelAsset();
-        assetB.filePath = [[[NSBundle mainBundle] pathForResource:@"karstenholymoly_b" ofType:@"mp3"] fileSystemRepresentation];
-        assetB.originalBPM = 100;
-        assetB.firstBeatMs = 1836;
+        assetB.filePath = [[[NSBundle mainBundle] pathForResource:@"cdk_b" ofType:@"mp3"] fileSystemRepresentation];
+        assetB.originalBPM = 101;
+        assetB.firstBeatMs = 31;
 
         mixer = new MixerEngine(assetA, assetB);
     }

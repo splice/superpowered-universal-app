@@ -389,7 +389,7 @@ struct ContentView: View {
             }
         }
         .alert(isPresented: $showInfoDialog) {
-                    Alert(title: Text("Song Credits"), message: Text("Stardust (Ziggy is coming) by Kraftamt (c) copyright 2020 Licensed under a Creative Commons Attribution Noncommercial (3.0) license. https://dig.ccmixter.org/files/Karstenholymoly/62493 Ft: Platinum Butterfly\n\nWaste Sound by Wiseman (c) copyright 2023 Licensed under a Creative Commons Attribution Noncommercial (4.0) license. https://dig.ccmixter.org/files/Wiseman/66831"), dismissButton: .default(Text("Close")))
+                    Alert(title: Text("Music Credits"), message: Text("ＭＩＬＬＥＮＮＩＡＬＳ by cdk (c) copyright 2018 Licensed under a Creative Commons Attribution (3.0) license.\nhttps://dig.ccmixter.org/files/cdk/57150\n\nI Have Often Told You Stories (guitar instrumental) by Ivan Chew (c) copyright 2013 Licensed under a Creative Commons Attribution (3.0) license.\nhttps://dig.ccmixter.org/files/ramblinglibrarian/41284"), dismissButton: .default(Text("Close")))
                 }
         .padding(20.0)
         .background(
