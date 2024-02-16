@@ -378,20 +378,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         // Called when the user answers to the permission dialogs.
-        if ((requestCode != 0) || (grantResults.length < 1) || (grantResults.length != permissions.length)) return;
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if ((requestCode != 0) || (grantResults.length < 1) || (grantResults.length != permissions.length))
+            return;
         boolean hasAllPermissions = true;
 
-        for (int grantResult:grantResults) if (grantResult != PackageManager.PERMISSION_GRANTED) {
-            hasAllPermissions = false;
-            Toast.makeText(getApplicationContext(), "Please allow all permissions for the app.", Toast.LENGTH_LONG).show();
-        }
+        for (int grantResult : grantResults)
+            if (grantResult != PackageManager.PERMISSION_GRANTED) {
+                hasAllPermissions = false;
+                Toast.makeText(getApplicationContext(), "Please allow all permissions for the app.", Toast.LENGTH_LONG).show();
+            }
 
         if (hasAllPermissions) initialize();
     }
 
     private void initialize() {
-        AssetFileDescriptor fd0 = getResources().openRawResourceFd(R.raw.wiseman_a);
-        AssetFileDescriptor fd1 = getResources().openRawResourceFd(R.raw.karstenholymoly_b);
+        AssetFileDescriptor fd0 = getResources().openRawResourceFd(R.raw.ramblinglibrarian);
+        AssetFileDescriptor fd1 = getResources().openRawResourceFd(R.raw.cdk);
         int fileAoffset = (int)fd0.getStartOffset();
         int fileAlength = (int)fd0.getLength();
         int fileBoffset = (int)fd1.getStartOffset();
