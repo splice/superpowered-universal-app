@@ -124,8 +124,8 @@ void MixerChannel::setSyncToBPM(double bpm) {
 }
 
 void MixerChannel::setFilterFrequencyPosition(float newValue) {
-    const float maxFrequency = 20000;
-    const float minFrequency = 20;
+    const float maxFrequency = 3000;
+    const float minFrequency = 200;
 
     const float newValueHz = (newValue - 0.5) * (maxFrequency / 0.5);
 

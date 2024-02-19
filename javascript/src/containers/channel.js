@@ -47,8 +47,8 @@ const Channel = ({peaks, label, onVolumeChange, onFilterChange, onRollChange, on
     const renderFiltersweep = () => {
         return <Box sx={{height: '120px'}}>
         <Slider 
-            min={-20000}
-            max={20000}
+            min={-19500}
+            max={10000}
             step={1}
             defaultValue={0}
             onChange={(v)=>onFilterChange(v)}
