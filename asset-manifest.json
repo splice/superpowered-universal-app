@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/superpowered-universal-app/static/css/main.df3f7f6b.css",
-    "main.js": "/superpowered-universal-app/static/js/main.a79e7429.js",
+    "main.js": "/superpowered-universal-app/static/js/main.9e7ff222.js",
     "index.html": "/superpowered-universal-app/index.html",
     "main.df3f7f6b.css.map": "/superpowered-universal-app/static/css/main.df3f7f6b.css.map",
-    "main.a79e7429.js.map": "/superpowered-universal-app/static/js/main.a79e7429.js.map"
+    "main.9e7ff222.js.map": "/superpowered-universal-app/static/js/main.9e7ff222.js.map"
   },
   "entrypoints": [
     "static/css/main.df3f7f6b.css",
-    "static/js/main.a79e7429.js"
+    "static/js/main.9e7ff222.js"
   ]
 }
