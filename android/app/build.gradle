@@ -52,7 +52,7 @@ android { // main settings for your application
 }
 
 dependencies {
-    implementation 'rongi.rotate-layout:rotate-layout:3.0.0'
+    implementation 'com.github.rongi:rotate-layout:v3.0.0'
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.5.0'
