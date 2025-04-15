@@ -3,12 +3,12 @@ apply plugin: 'com.android.application'
 def superpowered_sdk_path = new File(projectDir, '../../superpowered')
 
 android { // main settings for your application
-    compileSdkVersion = 34
+    compileSdkVersion = 35
 
     defaultConfig {
         applicationId "com.superpowered.universalpapp"
-        minSdkVersion 24
-        targetSdkVersion 34
+        minSdkVersion 26
+        targetSdkVersion 35
         versionCode 6
         versionName "1.0.1"
 
@@ -53,7 +53,7 @@ android { // main settings for your application
 
 dependencies {
     implementation 'com.github.rongi:rotate-layout:v3.0.0'
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "androidx.constraintlayout:constraintlayout:2.2.1"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 }
